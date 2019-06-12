@@ -1,3 +1,43 @@
 baseURL: "http://example.org/"
 languageCode: "en-us"
-title: "My New Hugo Site"
+title: "Alex Norell"
+theme: "hyde-hyde"
+
+params:
+  author: "Author"
+  title: "Title"
+  description: "Computer Engineer"
+  dateformat: "January 2, 2006"
+
+  # sidebar, copyright & license
+  copyright: "Alex Norell"
+  
+  # https://highlightjs.org
+  highlightjs: true
+  highlightjsstyle: "github"
+
+  # Utterances (comments)
+  UtterancesRepo: "alexnorell/website"
+
+  social:
+    github: "alexnorell"
+    linkedin: "alexnorell"
+    twitter: "alexnorell"
+    stackoverflow: "alexnorell"
+    keybase: "alexnorell"
+    gravatar: "alex.norell@gmail.com"
+
+menu:
+  main:
+  - name: "Posts"
+    weight: 100
+    identifier: "posts"
+    url: "/posts/"
+  - name: "Portfolio"
+    identifier: "portfolio"
+    weight: 200
+    url: "/portfolio/"
+  - name: "About"
+    identifier: "about"
+    weight: 300
+    url: "/about/"
