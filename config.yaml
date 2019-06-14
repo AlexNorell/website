@@ -5,31 +5,27 @@ theme: "strata"
 
 enableGitInfo: true
 
-frontmatter:
-  date: ["date", "publishDate", "lastmod"]
-  lastmod: [":git", "lastmod", "date", "publishDate"]
-  publishDate: ["publishDate", "date"]
-  expiryDate: ["expiryDate"]
+# frontmatter:
+#   date: ["date", "publishDate", "lastmod"]
+#   lastmod: [":git", "lastmod", "date", "publishDate"]
+#   publishDate: ["publishDate", "date"]
+#   expiryDate: ["expiryDate"]
 
 params:
   author: "Alex Norell"
   title: "Title"
   description: "Computer Engineer"
   date_format: "January 2, 2006"
-
-  sidebar:
-    bio: "Computer Engineer @ [SleepIQ Labs](https://sleepiqlabs.com)"
-
-    github: "alexnorell"
-    gitlab: "alexnorell"
-    linkedin: "alexnorell"
-    twitter: "alexnorell"
-    stackoverflow: "alexnorell"
-    keybase: "alexnorell"
-    youtube: "alexnorell"
-    gravatar: "alex.norell@gmail.com"
-    copyright: ["Design: [HTML5 UP](//html5up.net)"]
-
+  bio: "Computer Engineer @ [SleepIQ Labs](https://sleepiqlabs.com)"
+  
+  social:
+    - github: "alexnorell"
+    - linkedin: "alexnorell"
+    - twitter: "alexnorell"
+    - keybase: "alexnorell"
+    - youtube: "alexnorell"
+    
+  
   about:
     hide: false
     title: "This is my site"
@@ -47,7 +43,9 @@ params:
   recentposts:
     hide: false
     title: "Recent blog posts"
-    email: "nope@gmail.com"
 
   contact:
     hide: true
+
+  copyright: 
+    - "Design: [HTML5 UP](https://html5up.net)"

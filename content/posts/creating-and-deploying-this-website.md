@@ -1,7 +1,6 @@
 ---
 categories: ["web"]
 tags: ["hugo", "jenkins", "docker", "nginx"]
-date: 2019-06-12
 title: "Creating and Deploying This Website"
 ---
 
