@@ -1,19 +1,10 @@
-baseURL: "http://alexnorell.com/"
+baseURL: "https://www.norell.co"
 languageCode: "en-us"
 title: "Alex Norell"
 theme: "strata"
 
-enableGitInfo: true
-
-# frontmatter:
-#   date: ["date", "publishDate", "lastmod"]
-#   lastmod: [":git", "lastmod", "date", "publishDate"]
-#   publishDate: ["publishDate", "date"]
-#   expiryDate: ["expiryDate"]
-
 params:
   author: "Alex Norell"
-  title: "Title"
   description: "Computer Engineer"
   date_format: "January 2, 2006"
   bio: "Computer Engineer @ [SleepIQ Labs](https://sleepiqlabs.com)"
@@ -24,28 +15,13 @@ params:
     - twitter: "alexnorell"
     - keybase: "alexnorell"
     - youtube: "alexnorell"
-    
-  
+
   about:
-    hide: false
-    title: "This is my site"
-    content: "This is content in the about section"
-  
-  portfolio:
-    hide: false
-    title: "Recent Work"
-    gallery:
-      - image: 'fulls/01.jpg'
-        thumb: 'thumbs/01.jpg'
-        title: 'This is a gallery post'
-        description: 'This goes into the gallery post'
+    title: "Some of the stuff I want to share"
+    content: "This is more of a technical challenge rather than an actual blog. It is place for me to try out different server technologies, as well as write down how I did it."
 
   recentposts:
-    hide: false
     title: "Recent blog posts"
-
-  contact:
-    hide: true
 
   copyright: 
     - "Design: [HTML5 UP](https://html5up.net)"
