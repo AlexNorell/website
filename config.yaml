@@ -1,13 +1,35 @@
-baseURL: "https://www.norell.co"
+baseURL: "https://norell.co"
 languageCode: "en-us"
 title: "Alex Norell"
 theme: "strata"
+enableGitInfo: True
+
+frontmatter:
+  date:
+    - ":git"
+    - "date"
+    - ":fileModTime"
+    - "lastmod"
+  lastmod:
+    - ":git"
+    - "lastmod"
+    - ":fileModTime"
+    - "date"
+    - "publishDate"
+  publishDate:
+    - "publishDate"
+    - "date"
+  expiryDate:
+    - "expiryDate"
 
 params:
   author: "Alex Norell"
   description: "Computer Engineer"
   date_format: "January 2, 2006"
   bio: "Computer Engineer @ [SleepIQ Labs](https://sleepiqlabs.com)"
+  avatar: 
+    github: "alexnorell"
+  bg_credit: "Photo by Gauravdeep Singh Bansal on Unsplash"
   
   social:
     - github: "alexnorell"
