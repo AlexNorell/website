@@ -8,3 +8,4 @@ title: "Creating and Deploying This Website"
 * Create a website that can be generated using markdown files
 * Host the source code for the generation of the site in version control
 * Create infastructure around the generation and deployment of the website
+* Deploy to Google Cloud Platform
