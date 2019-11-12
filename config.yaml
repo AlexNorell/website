@@ -24,9 +24,9 @@ frontmatter:
 
 params:
   author: "Alex Norell"
-  description: "Computer Engineer"
+  description: "Embedded Software Engineer"
   date_format: "January 2, 2006"
-  bio: "Computer Engineer @ [SleepIQ Labs](https://sleepiqlabs.com)"
+  bio: "Embedded Software Engineer @ [SleepIQ Labs](https://sleepiqlabs.com)"
   avatar: 
     github: "alexnorell"
   bg_credit: "Photo by Gauravdeep Singh Bansal on Unsplash"
