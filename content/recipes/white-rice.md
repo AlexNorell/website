@@ -1,24 +1,43 @@
 ---
-categories: ["food"]
-tags: ["For 2", "Simple", "Light"]
-title: "White Rice"
-draft: true
+title: White Rice
+summary: A simple white rice recipe for 2
+draft: True
+isbn: 978-1945256066
+categories:
+  - Side Dish
+tags:
+  - For 2
+  - Simple
+  - Light
+ingredients:
+  - neutral oil:
+    - 1 teaspoon
+  - white rice:
+    - 3/4 cup
+  - water:
+    - 1 1/4 cup
+  - salt:
+    - 1/4 teaspoon
+tools:
+  - burner
+  - colander
+  - saucepan
+  - wooden spoon
+  - dish towel
+  - measuring cup
+serves: 2
 ---
 
-isbn: 978-1945256066
-ingredients: ["neutral oil", "white rice", "water", "salt"]
-tools: ["burner", "colander", "saucepan", "wooden spoon", "towel"]
-
-# Ingredients #
+## Ingredients ##
 
 * 1 teaspoon neutral oil (vegetable, avacado)
 * 3/4 cup white rice (long-grain, basmati, jasmine)
 * 1 1/4 cup water
 * 1/4 teaspoon salt
 
-# Instructions #
+## Instructions ##
 
-1. Rinse Rice in colander and water until water runs clear
+1. Rinse Rice in colander with water, shaking constantly, until water runs clear
 1. Drain rice as much as possible by swirling rice in colandar with wooden spoon
 1. Heat oil in a small saucepan on medium heat until shimmering
 1. Add washed and drained rice to saucepan
