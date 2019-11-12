@@ -28,7 +28,7 @@ params:
   date_format: "January 2, 2006"
   bio: "Embedded Software Engineer @ [SleepIQ Labs](https://sleepiqlabs.com)"
   avatar: 
-    github: "alexnorell"
+    local: "avatar.jpg"
   bg_credit: "Photo by Gauravdeep Singh Bansal on Unsplash"
   
   social:
