@@ -6,16 +6,14 @@ enableGitInfo: True
 
 frontmatter:
   date:
-    - ":git"
     - "date"
+    - ":git"
     - ":fileModTime"
-    - "lastmod"
+    - "publishDate"
   lastmod:
     - ":git"
-    - "lastmod"
     - ":fileModTime"
-    - "date"
-    - "publishDate"
+    - "lastmod"
   publishDate:
     - "publishDate"
     - "date"
