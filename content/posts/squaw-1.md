@@ -1,7 +1,15 @@
 ---
-title: "Ski 2020 - Day 1: Squaw"
-date: Jan 12, 2020
-draft: true
+title: "Day 1: Squaw"
+date: 2020-01-12
+summary: Ramblings and reviews of my first day up for the 2019/2020 ski season. 
+draft: false
+categories: 
+  - ski
+tags:
+  - squaw
+  - mantra
+  - kore99
+  - legend-96
 ---
 
 This was my first day up on the mountain in over 2 years. I didn't get a chance to ski during the 2018/2019 ski season, due to graduation in December and taking a 2 week trip to Europe in March. It was also a trip to make sure we had everything for our trip to Utah the next weekend. We drove up to Truckee on Saturday to get my wife's boots adjusted, and to also buy the equipment that we thought we had but we can't find anymore.
@@ -56,8 +64,9 @@ This was a nice ski, but the conditions weren't the best for it that day. I wasn
 ## Scott Vantage MIPS Helmet ##
 
 | Specification | Value |
+| --- | --- |
 | Airflow Settings | 9 |
-| Price | [$260](https://www.evo.com/helmets/smith-vantage-mips-helmet)
+| Price | [$260](https://www.evo.com/helmets/smith-vantage-mips-helmet) |
 
 I've been skiing with a Smith Holt helmet for the last 10 years, and I have used and abused it. It has saved my head many times from trees branches and tree trunk. I'm excited to retire it and replace it with something that not only is safer, with MIPS technology built in, but also has adjustable air vents that don't require me to take my helmet off and remove pieces from it. 
 
