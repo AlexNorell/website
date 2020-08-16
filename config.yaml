@@ -1,4 +1,4 @@
-baseURL: "https://norell.co/"
+baseURL: "https://alexnorell.com/"
 languageCode: "en-us"
 title: "Alex Norell"
 theme: "strata"
@@ -22,9 +22,9 @@ frontmatter:
 
 params:
   author: "Alex Norell"
-  description: "Embedded Software Engineer"
+  description: "Software Engineer"
   date_format: "January 2, 2006"
-  bio: "Embedded Software Engineer @ [SleepIQ Labs](https://sleepiqlabs.com)"
+  bio: "Software Engineer @ [Sleep Number Labs](https://sleepnumberlabs.com)"
   avatar: 
     local: "avatar.jpg"
   bg_credit: "Photo by Gauravdeep Singh Bansal on Unsplash"
