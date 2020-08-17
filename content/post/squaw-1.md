@@ -10,6 +10,7 @@ tags:
   - mantra
   - kore99
   - legend-96
+draft: true
 ---
 
 This was my first day up on the mountain in over 2 years. I didn't get a chance to ski during the 2018/2019 ski season, due to graduation in December and taking a 2 week trip to Europe in March. It was also a trip to make sure we had everything for our trip to Utah the next weekend. We drove up to Truckee on Saturday to get my wife's boots adjusted, and to also buy the equipment that we thought we had but we can't find anymore.

@@ -7,6 +7,7 @@ tags:
   - hugo 
   - nginx
 date: 2019-11-12
+lastmod: 2019-11-12
 draft: False
 ---
 
