@@ -1,7 +1,7 @@
-baseURL: "https://alexnorell.com/"
-languageCode: "en-us"
-title: "Alex Norell"
-theme: "strata"
+baseURL: https://alexnorell.com/
+languageCode: en-us
+title: Alex Norell
+theme: strata
 enableGitInfo: True
 
 frontmatter:
@@ -11,14 +11,27 @@ frontmatter:
     - ":fileModTime"
     - "publishDate"
   lastmod:
+    - "date"
+    - "lastmod"
     - ":git"
     - ":fileModTime"
-    - "lastmod"
   publishDate:
     - "publishDate"
     - "date"
   expiryDate:
     - "expiryDate"
+
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: github
+    tabWidth: 4
 
 params:
   author: "Alex Norell"
@@ -33,15 +46,16 @@ params:
     - github: "alexnorell"
     - linkedin: "alexnorell"
     - twitter: "alexnorell"
-    - keybase: "alexnorell"
     - youtube: "alexnorell"
+    - strava: "alexnorell"
 
   about:
-    title: "Some of the stuff I want to share"
-    content: "This is more of a technical challenge rather than an actual blog. It is place for me to try out different server technologies, as well as write down how I did it."
+    title: Hi. I'm Alex.
+    content: |
+      I am a Computer Engineer with a strong passion for everthing IoT. Hardware, Firmware, Software, Cloud, Security, Product.
 
   recentposts:
-    title: "Recent blog posts"
+    title: Recent posts
 
   copyright: 
     - "Design: [HTML5 UP](https://html5up.net)"
