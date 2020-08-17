@@ -2,3 +2,6 @@
 resources
 public
 gocd*
+
+# Local Netlify folder
+.netlify
