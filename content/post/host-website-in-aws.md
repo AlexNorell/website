@@ -4,6 +4,7 @@ date: 2020-08-18T23:06:28-07:00
 tags:
   - terraform
   - AWS
+  - s3
 draft: true
 ---
 
@@ -16,13 +17,9 @@ This will be using AWS, so the terraform provider must be set. This will use the
 The provider is defined below, and located in `main.tf`
 
 ```tf
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "3.2.0"
-    }
-  }
+provider "aws" {
+  version = "~> 3.0"
+  region  = "us-west-1"
 }
 ```
 
@@ -45,4 +42,57 @@ terraform {
   }
 }
 ```
+
+# Add s3 bucket
+
+I need a bucket to put the static website in. I added the s3 bucket configuration to `website.tf`
+
+```tf
+resource "aws_s3_bucket" "website" {
+  bucket = "website.norell.dev"
+  acl    = "public-read"
+  versioning {
+    enabled = false
+  }
+  website {
+    index_document = "index.html"
+    error_document = "404.html"
+  }
+}
+```
+
+# Configure S3 Bucket to be public
+
+While the bucket has been given the `public-read` ACL, from the [canned ACL list](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl), the IAM policy permissions haven't been set up. To do this, I'll create an IAM policy document.
+
+
+```tf
+data "aws_iam_policy_document" "website_read_access" {
+  statement {
+    sid       = "PublicReadGetObject"
+    effect    = "Allow"
+    actions   = ["s3:GetObject"]
+    resources = ["${aws_s3_bucket.website.arn}/*"]
+    principals {
+      type        = "*"
+      identifiers = ["*"]
+    }
+  }
+}
+```
+
+This is the same as the standard JSON policy, but it fits into the terraform flow a lot better.
+
+This policy then needs to be applied to the bucket.
+
+```tf
+resource "aws_s3_bucket_policy" "website_policy" {
+  bucket = aws_s3_bucket.website.id
+  policy = data.aws_iam_policy_document.website_read_access.json
+}
+```
+
+Now anything in the bucket will be public.
+
+
 
