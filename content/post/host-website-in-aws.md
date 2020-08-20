@@ -1,5 +1,5 @@
 ---
-title: "Host Website in AWS"
+title: "Host Website in AWS S3"
 date: 2020-08-18T23:06:28-07:00
 tags:
   - terraform
@@ -93,6 +93,3 @@ resource "aws_s3_bucket_policy" "website_policy" {
 ```
 
 Now anything in the bucket will be public.
-
-
-
