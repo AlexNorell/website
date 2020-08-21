@@ -1,10 +1,12 @@
 ---
-title: "Add External Domain AWS"
+title: "Add External Domain AWS and create record for S3"
 date: 2020-08-19T21:21:09-07:00
+lastnod: 2020-08-20T23:30:00-7:00
 tags:
   - aws
   - route53
   - domain name
+  - s3
 draft: false
 ---
 
@@ -24,42 +26,59 @@ I will follow [this guide](https://docs.aws.amazon.com/Route53/latest/DeveloperG
 
 Now that the domain is in Route53, I can set the domain for use by the website hosted in S3. You can find more information on that from the [previous post](../host-website-in-aws).
 
-## Get Hosted Zone into Terraform State
+## Get Hosted Zone information
 
-Becaues I created the hosted zone manually, I need to let Terraform know it exists, so that it doesn't try to create it again. The first step to import the state is add the resource. In `domain.tf`, I added the following
+I don't want to have terraform manage the top level hosted zone, so I will use a `data` type to retrieve the information from Route53. In `domain.tf` I added:
 
 ```tf
-resource "aws_route53_zone" "norell_dev" {
-  name = "norell.dev"
+variable "domain_name" {
+    description = "domain name to use from route53"
+    default = "norell.dev"
+}
+
+variable "subdomain" {
+    description = "subdomain to create record and bucket for"
+    default = "www"
+}
+
+data "aws_route53_zone" "domain" {
+  name = var.domain_name
 }
 ```
 
-The matches the name of my resource and zone that is already in Route53. I now need to grab the AWS ID of the zone. This can be found on the [Hosted zones panel](https://console.aws.amazon.com/route53/v2/hostedzones#), under the table entry **Hosted zone ID**. In my case, mine is `Z0892995169ZQ16UVKJTE`
+I want to make this generic, so I created variables, one for the generic top level domain name, and one for the subdomain. In this case, it is `norell.dev` and `www`.
 
-I then ran the terraform import command to transfer the current state to tfstate
+## Reconfigure S3 Bucket
 
-```sh
-terraform import aws_route53_zone.norell_dev Z0892995169ZQ16UVKJTE
+I created the S3 bucket for this website with the incorrect name. It needs to be **exactly** the same name as the domain name for Route53 to route to it. Since we have a varible for the subdomain now, and we have a data object for the domain hosted zone, we can use those to define the bucket name.
+
+
+In `website.tf`:
+
+```tf
+resource "aws_s3_bucket" "website" {
+  bucket = "${var.subdomain}.${data.aws_route53_zone.domain.name}"
+...
 ```
 
 ## Create the alias
 
-Once the state was imported to terraform, I was able to add the alias route of `www.norell.dev` to the endpoint of the S3 bucket hosting the website.
+To add the alias for the bucket, I added the alias definition for the subdomain
 
 Adding to `domain.tf`
 
 ```tf
-resource "aws_route53_record" "norell_dev" {
-  zone_id = aws_route53_zone.norell_dev.zone_id
-  name    = "www.norell.dev"
+resource "aws_route53_record" "www" {
+  zone_id = data.aws_route53_zone.domain.zone_id
+  name    = "${var.subdomain}.${data.aws_route53_zone.domain.name}"
   type    = "A"
 
   alias {
-    name                   = aws_s3_bucket.website.website_endpoint
+    name                   = aws_s3_bucket.website.website_domain
     zone_id                = aws_s3_bucket.website.hosted_zone_id
     evaluate_target_health = true
   }
 }
 ```
 
-This grabs the endpoint and hosted zone ID from the bucket, allowing for no hardcoded values for the alias.
+This grabs the domain and hosted zone ID from the bucket, allowing for no hardcoded values for the alias.
