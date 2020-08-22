@@ -5,6 +5,8 @@ tags:
   - terraform
   - AWS
   - s3
+categories:
+  - aws
 draft: false
 ---
 

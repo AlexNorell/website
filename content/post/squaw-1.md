@@ -1,9 +1,9 @@
 ---
 title: "Day 1: Squaw"
 date: 2020-01-12
-summary: Ramblings and reviews of my first day up for the 2019/2020 ski season. 
+summary: Ramblings and reviews of my first day up for the 2019/2020 ski season.
 draft: false
-categories: 
+categories:
   - ski
 tags:
   - squaw

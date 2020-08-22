@@ -6,6 +6,8 @@ tags:
   - AWS
   - s3
   - cloudfront
+categories:
+  - aws
 draft: false
 ---
 
@@ -71,12 +73,6 @@ resource "aws_acm_certificate" "www" {
 This will create a certificate in the `us-east-1` in Certificate Manager. This cert isn't usable until we verify that we own the domain.
 
 ```tf
-resource "aws_acm_certificate_validation" "www" {
-  provider                = aws.us_east_1
-  certificate_arn         = aws_acm_certificate.www.arn
-  validation_record_fqdns = [for record in aws_route53_record.www_validation : record.fqdn]
-}
-
 resource "aws_route53_record" "www_validation" {
   for_each = {
     for dvo in aws_acm_certificate.www.domain_validation_options : dvo.domain_name => {
@@ -93,6 +89,12 @@ resource "aws_route53_record" "www_validation" {
   type            = each.value.type
   zone_id         = data.aws_route53_zone.domain.zone_id
 }
+
+resource "aws_acm_certificate_validation" "www" {
+  provider                = aws.us_east_1
+  certificate_arn         = aws_acm_certificate.www.arn
+  validation_record_fqdns = [for record in aws_route53_record.www_validation : record.fqdn]
+}
 ```
 
 This will set up the certification validation settings, and create the Route53 DNS entries to confirm that we are in control of the domain.
@@ -107,7 +109,7 @@ In `cloudfront.tf`:
 resource "aws_cloudfront_distribution" "domain_distribution" {
   enabled             = true
   default_root_object = "index.html"
-  aliases = [local.full_domain]
+  aliases             = [local.full_domain]
   origin {
     custom_origin_config {
       http_port              = "80"

@@ -1,12 +1,14 @@
 ---
 title: "Add External Domain AWS and create record for S3"
 date: 2020-08-19T21:21:09-07:00
-lastnod: 2020-08-20T23:30:00-7:00
+lastmod: 2020-08-20T23:30:00-7:00
 tags:
   - aws
   - route53
   - domain name
   - s3
+categories:
+  - aws
 draft: false
 ---
 

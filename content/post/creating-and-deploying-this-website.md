@@ -1,10 +1,10 @@
 ---
 title: Creating and Deploying This Website
-summary: A detailed explanation on how this website is generated and hosted. 
+summary: A detailed explanation on how this website is generated and hosted.
 categories:
   - web
 tags:
-  - hugo 
+  - hugo
   - nginx
 date: 2019-11-12
 lastmod: 2019-11-12
