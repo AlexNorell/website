@@ -20,7 +20,7 @@ From the [get.dev](https://get.dev/#benefits) page:
 Even though S3 is hosting the page, the browser will not display it due to HSTS. We can see that it is working using HTTP either with a browser that doesn't care about HSTS, or using curl.
 
 ```sh
-$curl www.norell.dev
+$ curl www.norell.dev
 <!DOCTYPE html>
 <html>
     <head>
@@ -108,7 +108,7 @@ In `cloudfront.tf`:
 ```tf
 resource "aws_cloudfront_distribution" "domain_distribution" {
   enabled             = true
-  default_root_object = "index.html"
+  default_root_object = "​index.html"
   aliases             = [local.full_domain]
   origin {
     custom_origin_config {

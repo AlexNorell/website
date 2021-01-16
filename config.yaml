@@ -1,8 +1,9 @@
 baseURL: https://alexnorell.com/
 languageCode: en-us
 title: Alex Norell
-theme: strata
+theme: hugo-theme-m10c
 enableGitInfo: True
+paginate: 10
 
 frontmatter:
   date:
@@ -21,6 +22,15 @@ frontmatter:
   expiryDate:
     - "expiryDate"
 
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+    - identifier: tags
+      name: Tags
+      url: /tags/
+
 markup:
   highlight:
     codeFences: true
@@ -30,7 +40,7 @@ markup:
     lineNos: false
     lineNumbersInTable: true
     noClasses: true
-    style: github
+    style: dracula
     tabWidth: 4
 
 params:
@@ -38,16 +48,17 @@ params:
   description: "Software Engineer"
   date_format: "January 2, 2006"
   bio: "Software Engineer @ [Sleep Number Labs](https://sleepnumberlabs.com)"
-  avatar: 
-    local: "avatar.jpg"
-  bg_credit: "Photo by Gauravdeep Singh Bansal on Unsplash"
-  
+  avatar: "images/avatar.jpg"
+
   social:
-    - github: "alexnorell"
-    - linkedin: "alexnorell"
-    - twitter: "alexnorell"
-    - youtube: "alexnorell"
-    - strava: "alexnorell"
+    - name: github
+      url: "https://github.com/alexnorell"
+    - name: linkedin
+      url : "https://linkedin.com/alexnorell"
+    - name: twitter
+      url: "https://twitter.com/alexnorell"
+    - name: youtube
+      url: "https://youtube.com/alexnorell"
 
   about:
     title: Hi. I'm Alex.
@@ -57,5 +68,12 @@ params:
   recentposts:
     title: Recent posts
 
-  copyright: 
+  style:
+    darkestColor: '#282a36'
+    darkColor: '#21222B'
+    primaryColor: '#bd93f9'
+    lightColor: '#f8f8f2'
+    lightestColor: '#50fa7b'
+
+  copyright:
     - "Design: [HTML5 UP](https://html5up.net)"
