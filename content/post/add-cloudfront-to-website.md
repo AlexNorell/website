@@ -1,5 +1,5 @@
 ---
-title: "Add Cloudfront to Website"
+title: "Add Cloudfront to a Website"
 date: 2020-08-22T12:00:00-07:00
 tags:
   - terraform

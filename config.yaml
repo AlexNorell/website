@@ -45,16 +45,16 @@ markup:
 
 params:
   author: "Alex Norell"
-  description: "Software Engineer"
+  description: "Software Engineer with a passion for IoT"
   date_format: "January 2, 2006"
-  bio: "Software Engineer @ [Sleep Number Labs](https://sleepnumberlabs.com)"
   avatar: "images/avatar.jpg"
+  favicon: "images/favicon/favicon.ico"
 
   social:
     - name: github
       url: "https://github.com/alexnorell"
     - name: linkedin
-      url : "https://linkedin.com/alexnorell"
+      url : "https://linkedin.com/in/alexnorell"
     - name: twitter
       url: "https://twitter.com/alexnorell"
     - name: youtube
@@ -63,7 +63,7 @@ params:
   about:
     title: Hi. I'm Alex.
     content: |
-      I am a Computer Engineer with a strong passion for everthing IoT. Hardware, Firmware, Software, Cloud, Security, Product.
+      I am a Computer Engineer with a strong passion for everything IoT. Hardware, Firmware, Software, Cloud, Security, Product.
 
   recentposts:
     title: Recent posts
