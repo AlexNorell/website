@@ -3,7 +3,7 @@ languageCode: en-us
 title: Alex Norell
 theme: hugo-theme-m10c
 enableGitInfo: True
-paginate: 10
+paginate: 5
 
 frontmatter:
   date:
@@ -24,12 +24,18 @@ frontmatter:
 
 menu:
   main:
-    - identifier: home
-      name: Home
-      url: /
-    - identifier: tags
-      name: Tags
-      url: /tags/
+  - identifier: home
+    name: Home
+    url: /
+    weight: -110
+  - identifier: categories
+    name: Categories
+    url: /categories/
+    weight: -100
+  - identifier: tags
+    name: Tags
+    url: /tags/
+    weight: -90
 
 markup:
   highlight:
@@ -49,6 +55,10 @@ params:
   date_format: "January 2, 2006"
   avatar: "images/avatar.jpg"
   favicon: "images/favicon/favicon.ico"
+  utterences:
+    repo: alexnorell/website
+    issue-term: pathname
+    theme: dark-blue
 
   social:
     - name: github
@@ -60,20 +70,9 @@ params:
     - name: youtube
       url: "https://youtube.com/alexnorell"
 
-  about:
-    title: Hi. I'm Alex.
-    content: |
-      I am a Computer Engineer with a strong passion for everything IoT. Hardware, Firmware, Software, Cloud, Security, Product.
-
-  recentposts:
-    title: Recent posts
-
   style:
     darkestColor: '#282a36'
     darkColor: '#21222B'
     primaryColor: '#bd93f9'
     lightColor: '#f8f8f2'
     lightestColor: '#50fa7b'
-
-  copyright:
-    - "Design: [HTML5 UP](https://html5up.net)"
