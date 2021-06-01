@@ -8,6 +8,11 @@ tags:
 - home
 - audio
 - video
+images:
+- images/front.jpeg
+- images/back.jpeg
+- images/straight.jpeg
+- images/under.jpeg
 ---
 
 # Desk overview
@@ -105,3 +110,13 @@ After I upgraded to CamLink 4K, I wanted to still do something with my ClonerAll
   - [Logitech MX Master](https://www.amazon.com/Logitech-Master-Wireless-Mouse-High-precision/dp/B00TZR3WRM)
   - [Apple Magic Mouse 2](https://www.apple.com/shop/product/MRME2LL/A/magic-mouse-2-space-gray)
   - [Apple Magic Trackpad 2](https://www.apple.com/shop/product/MRMF2LL/A/magic-trackpad-2-space-gray)
+
+## Pictures
+
+{{< img src="images/front.jpeg" alt="Front of desk" >}}
+
+{{< img src="images/back.jpeg" alt="Back of desk" >}}
+
+{{< img src="images/straight.jpeg" alt="Straight on view of desk" >}}
+
+{{< img src="images/under.jpeg" alt="Underside of desk" >}}
