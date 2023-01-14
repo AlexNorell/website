@@ -1,0 +1,112 @@
+<!doctype html><html lang=en-us><head><title>Add Cloudfront to a Website // Alex Norell</title><link rel="shortcut icon" href=images/favicon/favicon.ico><meta charset=utf-8><meta name=generator content="Hugo 0.109.0"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="Alex Norell"><meta name=description content><link rel=stylesheet href=https://alexnorell.com/css/main.min.78ce516b8b5ad471a7a452fac3bf23012a8bd0ce212fc42d83c72e306bc719b0.css><meta name=twitter:card content="summary"><meta name=twitter:title content="Add Cloudfront to a Website"><meta name=twitter:description content="The domain I&rsquo;m using, norell.dev, requires the site to be served via HTTPS, or else the browser won&rsquo;t display it. Google, the owners of the gTLD, requires HSTS for the domain.
+From the get.dev page:
+Your security is our priority. The .dev top-level domain is included on the HSTS preload list, making HTTPS required on all connections to .dev websites and pages without needing individual HSTS registration or configuration. Security is built in."><meta property="og:title" content="Add Cloudfront to a Website"><meta property="og:description" content="The domain I&rsquo;m using, norell.dev, requires the site to be served via HTTPS, or else the browser won&rsquo;t display it. Google, the owners of the gTLD, requires HSTS for the domain.
+From the get.dev page:
+Your security is our priority. The .dev top-level domain is included on the HSTS preload list, making HTTPS required on all connections to .dev websites and pages without needing individual HSTS registration or configuration. Security is built in."><meta property="og:type" content="article"><meta property="og:url" content="https://alexnorell.com/post/add-cloudfront-to-website/"><meta property="article:section" content="post"><meta property="article:published_time" content="2020-08-22T12:00:00-07:00"><meta property="article:modified_time" content="2020-08-22T12:00:00-07:00"></head><body><header class=app-header><a href=https://alexnorell.com/><img class=app-header-avatar src=/images/avatar.jpg alt="Alex Norell"></a><h1>Alex Norell</h1><nav class=app-header-menu><a class=app-header-menu-item href=/>Home</a>
+-
+<a class=app-header-menu-item href=/categories/>Categories</a>
+-
+<a class=app-header-menu-item href=/tags/>Tags</a></nav><p>Software Engineer with a passion for IoT</p><div class=app-header-social><a target=_blank href=https://github.com/alexnorell rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github"><title>github</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg></a><a target=_blank href=https://linkedin.com/in/alexnorell rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin"><title>linkedin</title><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a><a target=_blank href=https://twitter.com/alexnorell rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter"><title>twitter</title><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg></a><a target=_blank href=https://youtube.com/alexnorell rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-youtube"><title>youtube</title><path d="M22.54 6.42a2.78 2.78.0 00-1.94-2C18.88 4 12 4 12 4s-6.88.0-8.6.46a2.78 2.78.0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78.0 003.4 19c1.72.46 8.6.46 8.6.46s6.88.0 8.6-.46a2.78 2.78.0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a></div></header><main class=app-container><article class=post><header class=post-header><h1 class=post-title>Add Cloudfront to a Website</h1><div class=post-meta><div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar"><title>calendar</title><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 
+Aug 22, 2020</div><div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock"><title>clock</title><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 
+3 min read</div><div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-folder"><title>folder</title><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg> 
+<a class=tag href=https://alexnorell.com/categories/aws/>aws</a></div><div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag"><title>tag</title><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83.0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> 
+<a class=tag href=https://alexnorell.com/tags/terraform/>terraform</a>
+<a class=tag href=https://alexnorell.com/tags/aws/>AWS</a>
+<a class=tag href=https://alexnorell.com/tags/s3/>s3</a>
+<a class=tag href=https://alexnorell.com/tags/cloudfront/>cloudfront</a></div></div></header><div class=post-content><p>The domain I&rsquo;m using, <code>norell.dev</code>, requires the site to be served via HTTPS, or else the browser won&rsquo;t display it. Google, the owners of the gTLD, requires HSTS for the domain.</p><p>From the <a href=https://get.dev/#benefits>get.dev</a> page:</p><blockquote><p>Your security is our priority. The <code>.dev</code> top-level domain is included on the HSTS preload list, making HTTPS required on all connections to .dev websites and pages without needing individual HSTS registration or configuration. Security is built in.</p></blockquote><p>Even though S3 is hosting the page, the browser will not display it due to HSTS. We can see that it is working using HTTP either with a browser that doesn&rsquo;t care about HSTS, or using curl.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ curl www.norell.dev
+</span></span><span style=display:flex><span>&lt;!DOCTYPE html&gt;
+</span></span><span style=display:flex><span>&lt;html&gt;
+</span></span><span style=display:flex><span>    &lt;head&gt;
+</span></span><span style=display:flex><span>        &lt;title&gt;Test&lt;/title&gt;
+</span></span><span style=display:flex><span>    &lt;/head&gt;
+</span></span><span style=display:flex><span>    &lt;body&gt;
+</span></span><span style=display:flex><span>        &lt;p&gt;Test&lt;/p&gt;
+</span></span><span style=display:flex><span>    &lt;/body&gt;
+</span></span><span style=display:flex><span>&lt;/html&gt;
+</span></span></code></pre></div><p>S3 does not support hosting content with HTTPS, so I will need to set up CloudFront to act as an intermediary between the S3 bucket, and the requester. CloudFront is designed to make static content like a website available all over the world. It moves the content closer to the requester, giving the user a much better experience. It also has the benefit of allowing HTTPS support.</p><h1 id=configuring-certificate>Configuring Certificate</h1><p>I first need to create a certificate to use for Cloudfront. For the certificate to work with CloudFront, it <strong>must</strong> be in <code>us-east-1</code>. If the certificate isn&rsquo;t in that region, CloudFront will not work. All of my website so far has been created in <code>us-west-1</code>, and I want to continue using that region. I need to create a separate region provider just for the certificate.</p><h2 id=us-east-provider>US East Provider</h2><p>In <code>main.tf</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tf data-lang=tf><span style=display:flex><span><span style=color:#ff79c6>provider</span> <span style=color:#f1fa8c>&#34;aws&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>version</span> = <span style=color:#f1fa8c>&#34;~&gt; 3.2&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>region</span>  = <span style=color:#f1fa8c>&#34;us-east-1&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>alias</span>   = <span style=color:#f1fa8c>&#34;us_east_1&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=certificate-creation>Certificate Creation</h2><p>We will then be able to use this for the provider to create the certificate. The rest of the infrastructure will still be in <code>us-west-1</code></p><p>In <code>cert.tf</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tf data-lang=tf><span style=display:flex><span><span style=color:#ff79c6>resource</span> <span style=color:#f1fa8c>&#34;aws_acm_certificate&#34;</span> <span style=color:#f1fa8c>&#34;www&#34;</span> {
+</span></span><span style=display:flex><span><span style=color:#ff79c6>  provider</span>          <span style=color:#ff79c6>=</span> aws.us_east_1
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>domain_name</span>       = local.full_domain
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>validation_method</span> = <span style=color:#f1fa8c>&#34;DNS&#34;</span>
+</span></span><span style=display:flex><span>  lifecycle {
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>create_before_destroy</span> = <span style=color:#ff79c6>true</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=certificate-validation>Certificate Validation</h2><p>This will create a certificate in the <code>us-east-1</code> in Certificate Manager. This cert isn&rsquo;t usable until we verify that we own the domain.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tf data-lang=tf><span style=display:flex><span><span style=color:#ff79c6>resource</span> <span style=color:#f1fa8c>&#34;aws_route53_record&#34;</span> <span style=color:#f1fa8c>&#34;www_validation&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>for_each</span> = {
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>for</span> dvo <span style=color:#ff79c6>in</span> aws_acm_certificate.www.domain_validation_options <span style=color:#ff79c6>:</span> dvo.domain_name =&gt; {
+</span></span><span style=display:flex><span>      <span style=color:#50fa7b>name</span>   = dvo.resource_record_name
+</span></span><span style=display:flex><span>      <span style=color:#50fa7b>record</span> = dvo.resource_record_value
+</span></span><span style=display:flex><span>      <span style=color:#50fa7b>type</span>   = dvo.resource_record_type
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>allow_overwrite</span> = <span style=color:#ff79c6>true</span>
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>name</span>            = <span style=color:#8be9fd;font-style:italic>each</span>.value.name
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>records</span>         = [<span style=color:#8be9fd;font-style:italic>each</span>.value.record]
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>ttl</span>             = <span style=color:#bd93f9>60</span>
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>type</span>            = <span style=color:#8be9fd;font-style:italic>each</span>.value.type
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>zone_id</span>         = <span style=color:#8be9fd;font-style:italic>data</span>.aws_route53_zone.domain.zone_id
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#ff79c6>
+</span></span></span><span style=display:flex><span><span style=color:#ff79c6>resource</span> <span style=color:#f1fa8c>&#34;aws_acm_certificate_validation&#34;</span> <span style=color:#f1fa8c>&#34;www&#34;</span> {
+</span></span><span style=display:flex><span><span style=color:#ff79c6>  provider</span>                <span style=color:#ff79c6>=</span> aws.us_east_1
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>certificate_arn</span>         = aws_acm_certificate.www.arn
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>validation_record_fqdns</span> = [<span style=color:#ff79c6>for</span> record <span style=color:#ff79c6>in</span> aws_route53_record.www_validation <span style=color:#ff79c6>:</span> record.fqdn]
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>This will set up the certification validation settings, and create the Route53 DNS entries to confirm that we are in control of the domain.</p><h1 id=cloudfront>CloudFront</h1><p>Now that we have a certificate, we can create a CloudFront Distribution.</p><p>In <code>cloudfront.tf</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tf data-lang=tf><span style=display:flex><span><span style=color:#ff79c6>resource</span> <span style=color:#f1fa8c>&#34;aws_cloudfront_distribution&#34;</span> <span style=color:#f1fa8c>&#34;domain_distribution&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>enabled</span>             = <span style=color:#ff79c6>true</span>
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>default_root_object</span> = <span style=color:#f1fa8c>&#34;​index.html&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>aliases</span>             = [local.full_domain]
+</span></span><span style=display:flex><span>  origin {
+</span></span><span style=display:flex><span>    custom_origin_config {
+</span></span><span style=display:flex><span>      <span style=color:#50fa7b>http_port</span>              = <span style=color:#f1fa8c>&#34;80&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#50fa7b>https_port</span>             = <span style=color:#f1fa8c>&#34;443&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#50fa7b>origin_protocol_policy</span> = <span style=color:#f1fa8c>&#34;http-only&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#50fa7b>origin_ssl_protocols</span>   = [<span style=color:#f1fa8c>&#34;TLSv1&#34;</span>, <span style=color:#f1fa8c>&#34;TLSv1.1&#34;</span>, <span style=color:#f1fa8c>&#34;TLSv1.2&#34;</span>]
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>domain_name</span> = aws_s3_bucket.website.website_endpoint
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>origin_id</span>   = local.full_domain
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  restrictions {
+</span></span><span style=display:flex><span>    geo_restriction {
+</span></span><span style=display:flex><span>      <span style=color:#50fa7b>restriction_type</span> = <span style=color:#f1fa8c>&#34;none&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  viewer_certificate {
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>acm_certificate_arn</span> = aws_acm_certificate.www.arn
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>ssl_support_method</span>  = <span style=color:#f1fa8c>&#34;sni-only&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  default_cache_behavior {
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>viewer_protocol_policy</span> = <span style=color:#f1fa8c>&#34;redirect-to-https&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>compress</span>               = <span style=color:#ff79c6>true</span>
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>allowed_methods</span>        = [<span style=color:#f1fa8c>&#34;GET&#34;</span>, <span style=color:#f1fa8c>&#34;HEAD&#34;</span>]
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>cached_methods</span>         = [<span style=color:#f1fa8c>&#34;GET&#34;</span>, <span style=color:#f1fa8c>&#34;HEAD&#34;</span>]
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>target_origin_id</span>       = local.full_domain
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>min_ttl</span>                = <span style=color:#bd93f9>0</span>
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>default_ttl</span>            = <span style=color:#bd93f9>86400</span>
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>max_ttl</span>                = <span style=color:#bd93f9>31536000</span>
+</span></span><span style=display:flex><span>    forwarded_values {
+</span></span><span style=display:flex><span>      <span style=color:#50fa7b>query_string</span> = <span style=color:#ff79c6>false</span>
+</span></span><span style=display:flex><span>      cookies {
+</span></span><span style=display:flex><span>        <span style=color:#50fa7b>forward</span> = <span style=color:#f1fa8c>&#34;none&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h1 id=update-route53>Update Route53</h1><p>We need to update the route in Route53 to send requests to CloudFront, rather than S3.</p><p>In <code>domain.tf</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tf data-lang=tf><span style=display:flex><span><span style=color:#ff79c6>resource</span> <span style=color:#f1fa8c>&#34;aws_route53_record&#34;</span> <span style=color:#f1fa8c>&#34;www&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>zone_id</span> = <span style=color:#8be9fd;font-style:italic>data</span>.aws_route53_zone.domain.zone_id
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>name</span>    = local.full_domain
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>type</span>    = <span style=color:#f1fa8c>&#34;A&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  alias {
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>name</span>                   = aws_cloudfront_distribution.domain_distribution.domain_name
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>zone_id</span>                = aws_cloudfront_distribution.domain_distribution.hosted_zone_id
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>evaluate_target_health</span> = <span style=color:#ff79c6>true</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div><div class=post-footer><script src=https://utteranc.es/client.js repo=alexnorell/website issue-term=pathname theme=dark-blue crossorigin=anonymous async></script></div></article></main></body></html>
