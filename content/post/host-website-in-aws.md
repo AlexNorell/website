@@ -10,7 +10,7 @@ categories:
 draft: false
 ---
 
-I'm want to deploy a copy of this website to AWS S3, and set up all of the necessary infrastructure using terraform. This post will go over the steps that were taken to achieve this.
+I want to deploy a copy of this website to AWS S3, and set up all of the necessary infrastructure using terraform. This post will go over the steps that were taken to achieve this.
 
 # Set up provider
 
