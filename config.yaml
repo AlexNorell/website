@@ -3,7 +3,7 @@ languageCode: en-us
 title: Alex Norell
 theme: hugo-theme-m10c
 enableGitInfo: True
-paginate: 5
+paginate: 10
 
 frontmatter:
   date:
@@ -48,6 +48,13 @@ markup:
     noClasses: true
     style: dracula
     tabWidth: 4
+  goldmark:
+    renderer:
+      hardWraps: false
+      unsafe: false
+      xhtml: false
+    parser:
+      autoHeadingID: true
 
 params:
   author: "Alex Norell"
@@ -58,21 +65,30 @@ params:
   utterences:
     repo: alexnorell/website
     issue-term: pathname
-    theme: dark-blue
+    theme: github-dark
 
   social:
-    - name: github
+    - icon: github
       url: "https://github.com/alexnorell"
-    - name: linkedin
+      title: GitHub
+    - icon: linkedin
       url : "https://linkedin.com/in/alexnorell"
-    - name: twitter
-      url: "https://twitter.com/alexnorell"
-    - name: youtube
+      title: LinkedIn
+    - icon: youtube
       url: "https://youtube.com/alexnorell"
+      title: YouTube
+  
+  # Dracula
+  # style:
+  #   darkestColor: '#282a36'
+  #   darkColor: '#21222B'
+  #   primaryColor: '#bd93f9'
+  #   lightColor: '#f8f8f2'
+  #   lightestColor: '#50fa7b'
 
   style:
-    darkestColor: '#282a36'
-    darkColor: '#21222B'
-    primaryColor: '#bd93f9'
-    lightColor: '#f8f8f2'
-    lightestColor: '#50fa7b'
+    darkestColor: '#161B22'
+    darkColor: "#0D1117"
+    lightColor: "#E6EDF3"
+    lightestColor: "#FFFFFF"
+    primaryColor: "#2F81F7"
