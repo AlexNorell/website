@@ -1,6 +1,6 @@
 ---
 title: "NAS Drive Configuration"
-date: 2021-01-14T12:00:00-07:00
+date: 2024-01-14T12:00:00-07:00
 tags:
   - nas
 categories:
@@ -8,7 +8,6 @@ categories:
 draft: false
 hidden: true
 ---
-
 
 ## Front Drive Bays
 
