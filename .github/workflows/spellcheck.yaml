@@ -96,6 +96,11 @@ jobs:
           cspell:npm/npm.txt
           cspell:node/src/node-old.txt
           cspell:filetypes/filetypes.txt
+          cspell:k8s/dict/k8s.txt
+          cspell:fullstack/dict/fullstack.txt
+          cspell:golang/dict/go.txt
+          cspell:dotnet/dict/dotnet.txt
+          cspell:svelte/dict/svelte.txt
 
   comment-push:
     name: Report (Push)
