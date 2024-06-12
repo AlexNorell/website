@@ -1,9 +1,12 @@
 baseURL: https://alexnorell.com/
 languageCode: en-us
 title: Alex Norell
-theme: hugo-theme-m10c
 enableGitInfo: True
 paginate: 10
+
+module:
+  imports:
+    - path: "github.com/alexnorell/hugo-theme-m10c"
 
 frontmatter:
   date:
