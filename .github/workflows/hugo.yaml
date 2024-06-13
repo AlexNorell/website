@@ -17,6 +17,10 @@ jobs:
           submodules: true
           fetch-depth: 0
 
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: 'go.mod'
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3.0.0
         with:
@@ -29,6 +33,9 @@ jobs:
       #     key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
       #     restore-keys: |
       #       ${{ runner.os }}-hugomod-
+
+      - name: Install modules
+        run: hugo mod get -u
 
       - name: Build
         run: hugo --minify
