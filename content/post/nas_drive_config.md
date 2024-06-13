@@ -5,8 +5,8 @@ tags:
   - nas
 categories:
   - homelab
-draft: false
-hidden: true
+draft: true
+
 ---
 
 ## Front Drive Bays
