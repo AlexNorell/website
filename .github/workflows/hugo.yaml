@@ -30,9 +30,6 @@ jobs:
       #     restore-keys: |
       #       ${{ runner.os }}-hugomod-
 
-      - name: Install modules
-        run: hugo mod get -u
-
       - name: Build
         run: hugo --minify
 
