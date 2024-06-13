@@ -36,14 +36,10 @@ name: Check Spelling
 on:
   push:
     branches:
-    - "**"
-    tags-ignore:
-    - "**"
+    - main
   pull_request_target:
     branches:
-    - "**"
-    tags-ignore:
-    - "**"
+    - main
     types:
     - 'opened'
     - 'reopened'
