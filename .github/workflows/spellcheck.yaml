@@ -85,11 +85,8 @@ jobs:
           cspell:software-terms/src/software-terms.txt
           cspell:cpp/src/cpp.txt
           cspell:python/src/python/python-lib.txt
-          cspell:php/php.txt
           cspell:node/node.txt
           cspell:win32/src/win32.txt
-          cspell:typescript/typescript.txt
-          cspell:npm/npm.txt
           cspell:node/src/node-old.txt
           cspell:filetypes/filetypes.txt
           cspell:k8s/dict/k8s.txt
