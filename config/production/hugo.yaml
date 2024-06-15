@@ -1,0 +1,4 @@
+# Use public theme
+module:
+  imports:
+    - path: "github.com/alexnorell/hugo-theme-m10c"

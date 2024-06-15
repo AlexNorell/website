@@ -1,0 +1,4 @@
+# Use symlinked local theme
+theme: hugo-theme-m10c
+
+buildDrafts: true
