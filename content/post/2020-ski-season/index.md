@@ -93,7 +93,7 @@ A storm came through the previous day and Kachina peak opened up. We got some am
 
 Part of the reason to get the Mountain Collective pass was to ski in Canada, and to travel to Banff. We flew into Calgary, rented a car and drove straight to Revelstoke to start the trip off. We spent two nights at the Sandman Hotel and then drove back towards Calgary to spend an entire week at the Banff Warm Springs Hotel. We stayed at the Airport Marriott on the way out to make our 6 AM flight back home.
 
-{{< image-gallery images="images/revelstoke.webp|Revelstoke|Overlooking the Colombia River from the top of Revelstoke,images/banff_sunshine.webp|Banff Sunshine Village|Alex and Mariah taking a selfie inside the Orange Bubble of the Tee Pee Town Luxuary Express Quad at Sunshine Village,images/lake_louise.webp|Lake Louise|Alex skiing Ptarmigan Glades off the Ptarmigan chain at Lake Louise." >}}
+{{< image-gallery images="images/revelstoke.webp|Revelstoke|Overlooking the Colombia River from the top of Revelstoke,images/banff_sunshine.webp|Banff Sunshine Village|Alex and Mariah taking a selfie inside the Orange Bubble of the Tee Pee Town Luxury Express Quad at Sunshine Village,images/lake_louise.webp|Lake Louise|Alex skiing Ptarmigan Glades off the Ptarmigan chain at Lake Louise." >}}
 
 {{< expandable-box "February 23 - Revelstoke, BC" >}}
 First time skiing in Canada and first time at Revelstoke. This quickly became my favorite mountain of the season due to the amazing snow quality and gladed skiing.
