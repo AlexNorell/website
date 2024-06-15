@@ -6,7 +6,7 @@ categories:
 draft: false
 ---
 
-COVID-19 really screwed this year up for us. We had Mountain Collective Passes, but we didn't feel comfortable traveling, and we didn't travel for skiing until after Mariah had recieved her first vaccine shot. Due to all this, we only skiied three times, and all of them at Palisades Tahoe.
+COVID-19 really screwed this year up for us. We had Mountain Collective Passes, but we didn't feel comfortable traveling, and we didn't travel for skiing until after Mariah had received her first vaccine shot. Due to all this, we only skied three times, and all of them at Palisades Tahoe.
 
 ## Ski Trip Log
 
@@ -29,7 +29,7 @@ Another beautiful blue sky day. Had fun going all over the mountain, with a coup
 We drove up the night before and stayed at Basecamp in Tahoe City.
 
 {{< expandable-box "April 4 - Palisades, CA - 11,447ft" >}}
-We woke up pretty early this morning and decided go on a sunrise run on Lake Tahoe. We then skiied in the early morning before driving to Santa Cruz and doing a sunset run along the ocean.
+We woke up pretty early this morning and decided go on a sunrise run on Lake Tahoe. We then skied in the early morning before driving to Santa Cruz and doing a sunset run along the ocean.
 {{< /expandable-box >}}
 
 ## Ski Gear

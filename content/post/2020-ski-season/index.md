@@ -62,7 +62,7 @@ We stayed slopeside, so didn't have a reason to go to any of the other Aspen mou
 {{< /expandable-box >}}
 
 {{< expandable-box "January 26 - Arapahoe Basin, CO" >}}
-First time at The Legend. Immediately became my favorite Colorado mountain. Demoed some Blizzard Brahamas. They were a bit stiff for the conditions.
+First time at The Legend. Immediately became my favorite Colorado mountain. Demoed some Blizzard Brahmas. They were a bit stiff for the conditions.
 {{< /expandable-box >}}
 
 {{< expandable-box "January 27 - Arapahoe Basin, CO" >}}
@@ -93,7 +93,7 @@ A storm came through the previous day and Kachina peak opened up. We got some am
 
 Part of the reason to get the Mountain Collective pass was to ski in Canada, and to travel to Banff. We flew into Calgary, rented a car and drove straight to Revelstoke to start the trip off. We spent two nights at the Sandman Hotel and then drove back towards Calgary to spend an entire week at the Banff Warm Springs Hotel. We stayed at the Airport Marriott on the way out to make our 6 AM flight back home.
 
-{{< image-gallery images="images/revelstoke.webp|Revelstoke|Overlooking the Colombia River from the top of Revelstoke,images/banff_sunshine.webp|Banff Sunshine Village|Alex and Mariah taking a selfie inside the Orange Bubble of the Tee Pee Town Luxary Express Quad at Sunshine Village,images/lake_louise.webp|Lake Louise|Alex skiing Ptarmigan Glades off the Ptarmigan chain at Lake Louise." >}}
+{{< image-gallery images="images/revelstoke.webp|Revelstoke|Overlooking the Colombia River from the top of Revelstoke,images/banff_sunshine.webp|Banff Sunshine Village|Alex and Mariah taking a selfie inside the Orange Bubble of the Tee Pee Town Luxuary Express Quad at Sunshine Village,images/lake_louise.webp|Lake Louise|Alex skiing Ptarmigan Glades off the Ptarmigan chain at Lake Louise." >}}
 
 {{< expandable-box "February 23 - Revelstoke, BC" >}}
 First time skiing in Canada and first time at Revelstoke. This quickly became my favorite mountain of the season due to the amazing snow quality and gladed skiing.
@@ -112,7 +112,7 @@ First time at Sunshine Village and wasn't super impressed. This was mostly due t
 {{< /expandable-box >}}
 
 {{< expandable-box "February 28 - Mount Norquay, AB" >}}
-First time at Norquay. Completed the SkiBig3 challenge and picked up my free swag. I actually enjoyed the terrain at Noquay more than what I skiied at Sunshine Village.
+First time at Norquay. Completed the SkiBig3 challenge and picked up my free swag. I actually enjoyed the terrain at Norquay more than what I skied at Sunshine Village.
 {{< /expandable-box >}}
 
 {{< expandable-box "February 29 - Lake Louise, AB" >}}
@@ -124,7 +124,7 @@ Fun time at Lake Louise with a bunch of fresh snow the previous day.
 My dad was out in Breckenridge skiing and invited me to join him. It turned out to be my last time skiing in 2020. I flew into Denver, rented a car, and drove up to Breckenridge, where I stayed with family friends.
 
 {{< expandable-box "March 7 - Breckenridge, CO" >}}
-Skiied Whale Tale a bunch and some Peak 6.
+skied Whale Tale a bunch and some Peak 6.
 {{< /expandable-box >}}
 
 {{< expandable-box "March 8 - Arapahoe Basin, CO" >}}
@@ -151,7 +151,7 @@ I demoed over 10 different skis before I settled on buying the Volkl Mantra 102.
 
 ### Boots 
 
-In November 2019, I got a boot fitting at Evo in Portland and ended up buying the Dalbello Panterra 120. I was looking for a stiff boot and something that felt like my Salomon Ghost 130 boots that I had been skiing on for almost a decade. The Ghost boots were a 2 buckle boot, 2 piece boot with a zip lacing system simliar to a snowboard boot that really cinched down on my foot and held me in. The Panterra is a 3 buckle, 3 piece boot. I like the way they felt in the store and the similiar design.
+In November 2019, I got a boot fitting at Evo in Portland and ended up buying the Dalbello Panterra 120. I was looking for a stiff boot and something that felt like my Salomon Ghost 130 boots that I had been skiing on for almost a decade. The Ghost boots were a 2 buckle boot, 2 piece boot with a zip lacing system similar to a snowboard boot that really cinched down on my foot and held me in. The Panterra is a 3 buckle, 3 piece boot. I like the way they felt in the store and the similar design.
 
 After the second day, I wasn't happy with the fit of the boots and the control I was getting. I went to a boot fitter in Snowbird and got some punch work done and also ended up buying Zipfits to give me a more connected feeling with my boot. I will probably never ski in a boot without my Zipfits again.
 
@@ -169,7 +169,7 @@ I needed a new helmet, since the one I used in high school and early college had
 
 After a the first couple days, it was clear that I also needed new goggle. My previous ones were all scratched up and I couldn't see much out of them. I picked up a pair of Smith 4DMags in Snowbird and really love them. They give a huge field of view and the replaceable lenses give a ton of flexibility for different light conditions.
 
-{{< image-gallery images="images/smith_vantage_mips_ski_helmet.webp|Smith Vantage MIPS|Black Smith Vantage MIPS ski helmet,images/smith_4d_mag_googles.webp|Smith 4D Mag Googles|Smith 4D Mag Googles with Black Strap and Green Lenses" >}}
+{{< image-gallery images="images/smith_vantage_mips_ski_helmet.webp|Smith Vantage MIPS|Black Smith Vantage MIPS ski helmet,images/smith_4d_mag_goggles.webp|Smith 4D Mag goggles|Smith 4D Mag goggles with Black Strap and Green Lenses" >}}
 
 ### Outer Layer
 

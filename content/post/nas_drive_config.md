@@ -6,7 +6,6 @@ tags:
 categories:
   - homelab
 draft: true
-
 ---
 
 ## Front Drive Bays
