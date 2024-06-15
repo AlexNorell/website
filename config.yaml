@@ -65,7 +65,7 @@ markup:
 
 params:
   author: "Alex Norell"
-  description: "Skiier, Home Automator, Software Engineer"
+  description: "Skier, Home Automator, Software Engineer"
   date_format: "January 2, 2006"
   avatar: "images/avatar.small.webp"
   favicon: "images/favicon/favicon.ico"
