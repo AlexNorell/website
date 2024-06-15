@@ -4,9 +4,13 @@ title: Alex Norell
 enableGitInfo: True
 paginate: 10
 
+# Use public theme
 module:
   imports:
     - path: "github.com/alexnorell/hugo-theme-m10c"
+
+# # Use symlinked local theme
+# theme: hugo-theme-m10c
 
 frontmatter:
   date:
@@ -61,14 +65,10 @@ markup:
 
 params:
   author: "Alex Norell"
-  description: "Software Engineer with a passion for IoT"
+  description: "Skiier, Home Automator, Software Engineer"
   date_format: "January 2, 2006"
-  avatar: "images/avatar.jpg"
+  avatar: "images/avatar.small.webp"
   favicon: "images/favicon/favicon.ico"
-  utterences:
-    repo: alexnorell/website
-    issue-term: pathname
-    theme: github-dark
 
   social:
     - icon: github

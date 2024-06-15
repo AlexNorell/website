@@ -85,7 +85,7 @@ A Continuous Deployment pipeline requires something to deploy and something to d
 
 ### Application Design
 
-![Architecture Design](/images/react_app/architecture.svg)
+![Architecture Design](images/architecture.svg)
 
 The React Frontend can be deployed directly to [Amazon CloudFront](https://aws.amazon.com/cloudfront/) so that we can leverage AWS's fast content delivery network. CloudFront plus the DNS settings configured in Route53 should all be configured statically using something like CloudFormation or Terraform. CloudFront allows for distributing the web application in a 
 
