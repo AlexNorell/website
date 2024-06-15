@@ -4,14 +4,6 @@ title: Alex Norell
 enableGitInfo: True
 paginate: 10
 
-# Use public theme
-module:
-  imports:
-    - path: "github.com/alexnorell/hugo-theme-m10c"
-
-# # Use symlinked local theme
-# theme: hugo-theme-m10c
-
 frontmatter:
   date:
     - "date"

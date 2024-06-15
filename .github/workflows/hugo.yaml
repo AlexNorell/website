@@ -31,7 +31,7 @@ jobs:
             ${{ runner.os }}-hugomod-
 
       - name: Build
-        run: hugo --minify
+        run: hugo --config config/production/hugo.yaml --minify
 
       - name: Deploys
         uses: peaceiris/actions-gh-pages@v4.0.0
