@@ -5,11 +5,10 @@ draft: false
 tags:
  - AWS
  - CI/CD
+description: This interview question addresses managing cloud infrastructure, security, and auditing using AWS services for their integration and efficiency. For version control, code should be managed in Git and hosted on platforms like GitHub, with a GitHub Flow development style and strict code review processes to maintain quality. For infrastructure, AWS CloudFormation or Terraform can automate deployment and configuration, while AWS CloudWatch handles monitoring. Security is bolstered by tools like Dependabot for dependency scanning, AWS WAF for web application security, and AWS Audit Manager for compliance. Regarding the build vs. buy decision, I recommend opting for managed services to focus on product development rather than custom solutions. The CI/CD pipeline on AWS would use services like CodePipeline and CodeCommit, deploying a React frontend via CloudFront, managing user authentication through Cognito, and handling backend requests with API Gateway and Lambda. The ElasticSearch cluster would utilize appropriately sized AWS instances for scalability and fault tolerance.
 ---
 
-A company asked me to design their infrastructure as part of an interview. This seems like free work, but hey, it makes a good post and is a fun exercise.
-
-# Prompt
+## Prompt
 
 As we scale, we need to streamline our code deployment and infrastructure to be as efficient and robust as possible so that we can iterate quickly. These are some of the challenges that you’d be solving.
 
@@ -20,11 +19,11 @@ As we scale, we need to streamline our code deployment and infrastructure to be 
 3. How would you construct a CI/CD pipeline on AWS with a [React frontend](https://reactjs.org/), [NodeJS backend](https://nodejs.org/en/), and pool of worker jobs?
 4. How would you setup an [ElasticSearch](https://www.elastic.co/elasticsearch/) cluster for search with 100 million records in it, mostly free text across multiple languages?
 
-# Answers
+## Answers
 
 I'm going to tackle these questions using only AWS services because I know them and I know that they work well together. These questions can be answered in a lot of different ways with varying amounts of development and managements costs associated with them. Let's just assume that the cost of going with an AWS provided solution is still less than hiring more engineers to build it all yourself.
 
-## Tools
+### Tools
 
 Let's break this down into a couple different sections:
 
@@ -32,7 +31,7 @@ Let's break this down into a couple different sections:
 2. Infrastructure
 3. Security & Auditing
 
-### Code Management and Process
+#### Code Management and Process
 
 All of your code needs to be in version control system, preferably `git`. It should be pushed to a hosted system like [GitHub](https://github.com), [GitLab](https://gitlabs.com), [BitBucket](https://bitbucket.com), or [CodeCommit](https://aws.amazon.com/codecommit/). You should be using a [GitHub Flow](https://guides.github.com/introduction/flow/) style of development so that you can iterate quickly on your code. This system focuses on short lived code branches with frequent merges of code into a main branch. Releases are done from this main branch. Releases are defined as [Git Tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) which can then trigger the continuous deployment system to start a deployment. 
 
@@ -42,7 +41,7 @@ Depending on the size of the team and the amount of work that needs to be done, 
 
 If you want something that is a bit more general purpose, there are a ton of options out there. [Jira](https://www.atlassian.com/software/jira) is the industry incumbent, but I really wouldn't recommend using it. There are a ton of different SASS products out there for doing project management and they all offer free tiers/trials. Trying out a couple and finding which ever one makes the most sense for your workflow makes a lot of sense. 
 
-### Infrastructure
+#### Infrastructure
 
 For managing your infrastructure, it really depends on what you envision for your product in the future. Do you have any plans of moving off of AWS to another Cloud provider? Do you need to host fully separated instances of your product for other organizations, either internal to their infrastructure or cloud? Let's just assume that we're going to stay on AWS for right now.
 
@@ -56,7 +55,7 @@ If you want to spend a lot of time and build a custom solution, you can interfac
 
 You need some way to metric your application and collect application logs. There a lot of services out there to accomplish this, but it makes the most sense to just use AWS CloudWatch. This way you don't need to ship your logs out to these services and pay for the AWS egress traffic. You can set up alarms to alert if particular metrics are breached. 
 
-### Security & Auditing
+#### Security & Auditing
 
 At a bare minimum, you need to have dependency scanning set up for your node application to alert you if any of your dependencies have vulnerabilities. This is a very easy and free thing to do with GitHub's [Dependabot](https://dependabot.com/). This will even open up pull requests to update your dependencies automatically. You will also want to set up some sort of static security analysis tool like [SonarCloud](https://sonarcloud.io/) or [ShiftLeft](https://www.shiftleft.io/). These scan through the code itself and surface any security issues they identify. These are also both managed services meaning that there is no infrastructure to manage and maintain.
 
@@ -68,13 +67,13 @@ For auditing, you can use [AWS Audit Manager](https://aws.amazon.com/audit-manag
 
 You can also set up something like [Amazon Macie](https://aws.amazon.com/macie/) on your CloudWatch logs and metrics. This scans through the logs in real time and alerts you if it finds anything that shouldn't be happening, like S3 buckets changing from private to public, or disabling of security protections. Macie can also be configured to alert anytime it detects changes that would bring you out of compliance with any regulation or standard.
 
-## Build vs Buy
+### Build vs Buy
 
 There is no question on which one you should do, **buy**. Building and deploying a web application is a solved problem. There is nothing you are doing that sounds incredibly custom, and instead you should be focusing your engineering efforts on building out your product, rather than custom solutions.
 
 From what it sounds like, the company has a high margin product, with a low amount of concurrent users. Building and deploying a web application using managed serverless solutions that can automatically scale when demand increases in the future sounds like the best approach.
 
-## CI/CD Pipeline
+### CI/CD Pipeline
 
 A Continuous Deployment pipeline requires something to deploy and something to deploy into. Let's start with identifying the components:
 
@@ -83,7 +82,7 @@ A Continuous Deployment pipeline requires something to deploy and something to d
 - NodeJS backend components
 - ElasticSearch database
 
-### Application Design
+#### Application Design
 
 ![Architecture Design](images/architecture.svg)
 
@@ -99,19 +98,19 @@ The data layer will be [AWS ElasticSearch Service](https://aws.amazon.com/elasti
 
 All of the logs for each piece of this design will be sent to CloudWatch with metrics for each of these services also configured to send alerts based on usage.
 
-### Pipeline
+#### Pipeline
 
 The pipeline to deploy this system will be done around a single mono repository. While many teams work well around having separate applications and components versioned separately, managing service interoperability can become a challenge. To prevent this from happening and ensuring that every that is deployed can be easily tested and verified, the entire product will live within a single repository. Several pipelines will be created to handle deploying the infrastructure, the services, and managing the data. New releases and deployments will be triggered by tags to the repository.
 
 For the sake of this design, lets assume the code is stored in CodeCommit and the pipeline will be done using [AWS CodePipeline](https://aws.amazon.com/codepipeline/). CodePipeline is a continuous delivery service built into AWS. The pipeline will build all of the different application, test them, package them every single commit. When a tag is created in the CodeCommit repository it will go ahead and deploy them to the infrastructure.
 
-#### Integration
+##### Integration
 
 Every single commit pushed to the repository will be ran through unit tests, linters, and static code analysis. The status of these tests will be presented back to CodeCommit and becomes visible for each commit and part of the Pull Request process. Pull Requests can be blocked from merging if any of the checks fail and should be enable to keep code quality up.
 
 When a branch is being used for a Pull Request, the changes in the branch should also be tested in an ephemeral testing environment for integration testing. Something like [Robot Framework](https://robotframework.org/) can be used for doing this deep integration testing, where you would verify that your product is working as expected. You can write integration tests that exercise various features or components of the system and verify they are all working as expected together.
 
-#### Deployment
+##### Deployment
 
 There are a lot of different ways to handle deployment, but for this design we will use Canary releases as our particular deployment strategy. This means that we will slowly roll out the changes to the application and check for any bad behavior. If we see an increase in errors or alarms, we will revert the deployment back to the previous version. This entire process can be [enabled automatically](https://docs.aws.amazon.com/apigateway/latest/developerguide/canary-release.html) in API gateway.
 
@@ -119,7 +118,7 @@ If a separate environment for testing or staging is required, rather than always
 
 The configuration for all of these deployments is done via CloudFormation and applied with the CodePipeline itself. Everything will be defined as code.
 
-## ElasticSearch Cluster
+### ElasticSearch Cluster
 
 I've never touched any of the Elastic products or really used an ELK stack, but it is super popular. I've looked through both the [ElasticSearch sizing documentation](https://www.elastic.co/blog/found-sizing-elasticsearch) and the [AWS ElasticSearch Service sizing documentation](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/sizing-domains.html) and I think I have a rough idea of how the system should look.
 
@@ -133,7 +132,7 @@ Setting up a cluster to scale to the size of 100M items shouldn't be a challenge
 
 Let's just design a generic system that is fault-tolerant and can handle a dozen terabytes of data. We'll start with 3 `c6g.xlarge.elasticsearch` instances spread across availability zones for our dedicated master nodes. A dedicated master node performs cluster management tasks, but does not hold data or respond to data upload requests, so only one of the instances will be active at a given time. We'll then add 18 `r6g.xlarge.elasticsearch` as the rest of the nodes in the cluster. This will let us store around 14TB of data.
 
-### Compute
+#### Compute
 
 | Instance | vCPU | Memory (GiB) | Price ($/hr) | Nodes | Total ($/month) |
 | :-------------: | :---: | :---: | :---: | :---: | :---: |
@@ -141,7 +140,7 @@ Let's just design a generic system that is fault-tolerant and can handle a dozen
 | `r6g.xlarge.elasticsearch` | 4 | 32 | 0.335 | 18 | 4341.60 |
 
 
-### Storage
+#### Storage
 
 | EBS Type | Node Size | Price ($/GB-Month) | Nodes | Total ($/month) |
 | :---: | :---: | :---: | :---: | :---: |

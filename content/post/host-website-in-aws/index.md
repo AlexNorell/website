@@ -12,7 +12,7 @@ draft: false
 
 I want to deploy a copy of this website to AWS S3, and set up all of the necessary infrastructure using terraform. This post will go over the steps that were taken to achieve this.
 
-# Set up provider
+## Set up provider
 
 This will be using AWS, so the terraform provider must be set. This will use the latest terraform version, `0.13`.
 
@@ -25,7 +25,7 @@ provider "aws" {
 }
 ```
 
-# Set up backend
+## Set up backend
 
 This project will use S3 as the backend for storing the terraform state files. I created an S3 bucket using the AWS cli.
 
@@ -45,7 +45,7 @@ terraform {
 }
 ```
 
-# Add s3 bucket
+## Add s3 bucket
 
 I need a bucket to put the static website in. I added the s3 bucket configuration to `website.tf`
 
@@ -63,7 +63,7 @@ resource "aws_s3_bucket" "website" {
 }
 ```
 
-# Configure S3 Bucket to be public
+## Configure S3 Bucket to be public
 
 While the bucket has been given the `public-read` ACL, from the [canned ACL list](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl), the IAM policy permissions haven't been set up. To do this, I'll create an IAM policy document.
 

@@ -3,6 +3,8 @@ title: "2020 Ski Season"
 date: 2020-04-01T12:00:00-07:00
 categories:
   - skiing
+tags:
+  - Mountain Collective
 draft: false
 summary: 2020 ski season recap including mountains visited, gear changed, and travel notes.
 ---
@@ -25,7 +27,7 @@ This is a year of firsts for us, thanks to the Mountain Collective pass encourag
 
 We did a quick trip up to Tahoe to demo some skis and get some new equipment. We stayed at the Tahoe Vistana Inn in Tahoe Vista.
 
-{{< expandable-box "January 12 - Palisades, CA" >}}
+{{< expandable-box title="January 12 - Palisades, CA" >}}
 First time skiing on new boots. Demoed Volkl Mantras and Head Kore 99s and learned the Kore 99s are a very stiff ski. I really enjoyed the latest generation of Mantras.
 {{< /expandable-box >}}
 
@@ -33,19 +35,19 @@ First time skiing on new boots. Demoed Volkl Mantras and Head Kore 99s and learn
 
 Our first trip to a new place was to Utah for an extended weekend. We flew into Salt Lake City, rented a car, and stayed at the Hampton Inn in Sandy.
 
-{{< expandable-box "January 16 - Snowbird, UT" >}}
+{{< expandable-box title="January 16 - Snowbird, UT" >}}
 First time at the bird and Snowbird instantly became a favorite. Stormy weather. Demoed some Dynastar skis that I wasn't a fan of. Ended up getting some Smith 4D mag goggles here too.
 {{< /expandable-box >}}
 
-{{< expandable-box "January 17 - Snowbird, UT" >}}
+{{< expandable-box title="January 17 - Snowbird, UT" >}}
 Demoed some Dynastar skis again. Also spent a bunch of time with a boot-fitter since I wasn't happy with the fit of my new boots. Ended up buying some Zipfit liners that helped with the fit. 
 {{< /expandable-box >}}
 
-{{< expandable-box "January 18 - Alta, UT" >}}
+{{< expandable-box title="January 18 - Alta, UT" >}}
 First time at Alta and also became a favorite along with Snowbird. Definitely liked the terrain more at Alta though. Demoed Fisher Ranger 107Tis. Tried to buy them from the shop, but was told no. Demoed some other things too, and learned that I don't like floppy noodles.
 {{< /expandable-box >}}
 
-{{< expandable-box "January 19 - Alta, UT" >}}
+{{< expandable-box title="January 19 - Alta, UT" >}}
 Spent most of my time lapping high traverse and ballroom. Demoed Nordica Enforcers and enjoyed them.
 {{< /expandable-box >}}
 
@@ -53,19 +55,19 @@ Spent most of my time lapping high traverse and ballroom. Demoed Nordica Enforce
 
 We planned a trip to Colorado without even checking to see if anything was going on. We happened to go to Aspen during the X Games. We flew into Denver, rented a car, and drove to Aspen. We ended up staying at the Wildwood in Snowmass the first night, and the Viewline Resort the second night. Both of these were slope-side at Snowmass. We left Aspen and had to drive all the way down to Golden for a reasonably priced hotel for night 3. Our forth night, we were able to stay on the correct side of the Eisenhower tunnel at the Super 8 in Dillon. Our last night was at the Westin at the airport to make it easier to make our 6 am flight home.
 
-{{< expandable-box "January 24 - Snowmass, CO" >}}
+{{< expandable-box title="January 24 - Snowmass, CO" >}}
 First time at Aspen. Not as steep as I would have liked, but still a fun mountain. I demoed a pair of Volkl Mantra 102s here and really enjoyed them.
 {{< /expandable-box >}}
 
-{{< expandable-box "January 25 - Snowmass, CO" >}}
+{{< expandable-box title="January 25 - Snowmass, CO" >}}
 We stayed slopeside, so didn't have a reason to go to any of the other Aspen mountains. I ended up skiing on Black Crows here and actually got accustomed to skiing them. They were a much more center mounted ski than I had ever skied before.
 {{< /expandable-box >}}
 
-{{< expandable-box "January 26 - Arapahoe Basin, CO" >}}
+{{< expandable-box title="January 26 - Arapahoe Basin, CO" >}}
 First time at The Legend. Immediately became my favorite Colorado mountain. Demoed some Blizzard Brahmas. They were a bit stiff for the conditions.
 {{< /expandable-box >}}
 
-{{< expandable-box "January 27 - Arapahoe Basin, CO" >}}
+{{< expandable-box title="January 27 - Arapahoe Basin, CO" >}}
 Demoed some Enforcers again. Really enjoyed them and continued to lap Pali Main Street and Zuma bowl.
 {{< /expandable-box >}}
 
@@ -73,7 +75,7 @@ Demoed some Enforcers again. Really enjoyed them and continued to lap Pali Main 
 
 I bought some skis from a shop up in Truckee, so I needed to do an overnight trip to pick them up. I stayed at the Donner Lake Village in Truckee.
 
-{{< expandable-box "February 2 - Palisades, CA" >}}
+{{< expandable-box title="February 2 - Palisades, CA" >}}
 I pulled the trigger on getting a set of skis that I really enjoyed skiing and was accustomed to, the Volkl Mantra 102. It skied very similar to the Volkl Mantras that I had been skiing for 10 years at that point, but it was a bit wider allowing for a bit more flotation.
 {{< /expandable-box >}}
 
@@ -81,11 +83,11 @@ I pulled the trigger on getting a set of skis that I really enjoyed skiing and w
 
 First time ever to New Mexico and first time ever to the magical mountain that is Taos Ski Valley. We flew into Albuquerque, rented a car, and drove up to Taos. The first two nights we stayed Worldmark Taos. The last night, we ended up at the Super 8 near the Airport in Albuquerque.
 
-{{< expandable-box "February 8 - Taos, NM" >}}
+{{< expandable-box title="February 8 - Taos, NM" >}}
 Second time on my new skis and really enjoyed exploring all Taos had to offer.
 {{< /expandable-box >}}
 
-{{< expandable-box "February 9 - Taos, NM" >}}
+{{< expandable-box title="February 9 - Taos, NM" >}}
 A storm came through the previous day and Kachina peak opened up. We got some amazing fresh powder.
 {{< /expandable-box >}}
 
@@ -95,27 +97,27 @@ Part of the reason to get the Mountain Collective pass was to ski in Canada, and
 
 {{< image-gallery images="images/revelstoke.webp|Revelstoke|Overlooking the Colombia River from the top of Revelstoke,images/banff_sunshine.webp|Banff Sunshine Village|Alex and Mariah taking a selfie inside the Orange Bubble of the Tee Pee Town Luxury Express Quad at Sunshine Village,images/lake_louise.webp|Lake Louise|Alex skiing Ptarmigan Glades off the Ptarmigan chain at Lake Louise." >}}
 
-{{< expandable-box "February 23 - Revelstoke, BC" >}}
+{{< expandable-box title="February 23 - Revelstoke, BC" >}}
 First time skiing in Canada and first time at Revelstoke. This quickly became my favorite mountain of the season due to the amazing snow quality and gladed skiing.
 {{< /expandable-box >}}
 
-{{< expandable-box "February 24 - Revelstoke, BC" >}}
+{{< expandable-box title="February 24 - Revelstoke, BC" >}}
 Another amazing day with fresh snow coming down. 
 {{< /expandable-box >}}
 
-{{< expandable-box "February 26 - Lake Lousie, AB" >}}
+{{< expandable-box title="February 26 - Lake Lousie, AB" vert="22,165ft">}}
 First time at Lake Louise. Very fun mountain with amazing views.
 {{< /expandable-box >}}
 
-{{< expandable-box "February 27 - Banff Sunshine Village, AB" >}}
+{{< expandable-box title="February 27 - Banff Sunshine Village, AB" vert="14,189ft">}}
 First time at Sunshine Village and wasn't super impressed. This was mostly due to the really long traverse to go between sections.
 {{< /expandable-box >}}
 
-{{< expandable-box "February 28 - Mount Norquay, AB" >}}
+{{< expandable-box title="February 28 - Mount Norquay, AB" vert="9,869ft">}}
 First time at Norquay. Completed the SkiBig3 challenge and picked up my free swag. I actually enjoyed the terrain at Norquay more than what I skied at Sunshine Village.
 {{< /expandable-box >}}
 
-{{< expandable-box "February 29 - Lake Louise, AB" >}}
+{{< expandable-box title="February 29 - Lake Louise, AB" vert="14,086ft">}}
 Fun time at Lake Louise with a bunch of fresh snow the previous day.
 {{< /expandable-box >}}
 
@@ -123,11 +125,11 @@ Fun time at Lake Louise with a bunch of fresh snow the previous day.
 
 My dad was out in Breckenridge skiing and invited me to join him. It turned out to be my last time skiing in 2020. I flew into Denver, rented a car, and drove up to Breckenridge, where I stayed with family friends.
 
-{{< expandable-box "March 7 - Breckenridge, CO" >}}
+{{< expandable-box title="March 7 - Breckenridge, CO" vert="14,697ft">}}
 skied Whale Tale a bunch and some Peak 6.
 {{< /expandable-box >}}
 
-{{< expandable-box "March 8 - Arapahoe Basin, CO" >}}
+{{< expandable-box title="March 8 - Arapahoe Basin, CO" vert="11,516ft">}}
 Brought my Dad to Arapahoe Basin and took him down Pali.
 {{< /expandable-box >}}
 

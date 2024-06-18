@@ -26,15 +26,19 @@ menu:
   - identifier: home
     name: Home
     url: /
-    weight: -110
+    weight: 1
+  - identifier: about
+    name: About
+    url: /about/
+    weight: 2
   - identifier: categories
     name: Categories
     url: /categories/
-    weight: -100
+    weight: 3
   - identifier: tags
     name: Tags
     url: /tags/
-    weight: -90
+    weight: 4
 
 markup:
   highlight:
@@ -54,13 +58,17 @@ markup:
       xhtml: false
     parser:
       autoHeadingID: true
+  tableOfContents:
+    endLevel: 6
+    startLevel: 2
+    ordered: False
 
 params:
   author: "Alex Norell"
   description: "Skier, Home Automator, Software Engineer"
   date_format: "January 2, 2006"
-  avatar: "images/avatar.small.webp"
-  favicon: "images/favicon/favicon.ico"
+  avatar: "/images/avatar.small.webp"
+  favicon: "/images/favicon/favicon.ico"
 
   social:
     - icon: github
@@ -72,6 +80,9 @@ params:
     - icon: youtube
       url: "https://youtube.com/alexnorell"
       title: YouTube
+    - icon: rss
+      url: "/post/index.xml"
+      title: RSS
   
   # Dracula
   # style:
