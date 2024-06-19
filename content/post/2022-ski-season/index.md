@@ -68,6 +68,8 @@ We spent most of the time getting further up on the mountain and exploring a bit
 
 We spent the weekend in Jackson, staying in the Motel 6. It was clean, but definitely not recommended. This was also the weekend of Kings and Queens of Corbet's, so Rendezvous Mountain were pretty busy. The first thing we did our first day was to ride up the tram and experience Jackson Hole from the top of the mountain. Everything about the mountain lived up to the hype or exceeded it.
 
+{{< image-gallery images="images/mariah_at_jackson_hole.webp|Top of the tram|Mariah at the top of Rendezvous Mountain at Jackson Hole" >}}
+
 {{< expandable-box title="February 12 - Jackson Hole, WY" vert="29,564ft">}}
 Beautiful blue sky day in Jackson. It was cold, but not extremely cold. From what I understand, we got incredibly lucky with this weather. We explored the mountain and tried to ride every lift. My favorite stuff was off of Sublette and the Tram.
 {{< /expandable-box >}}
@@ -80,6 +82,8 @@ Another beautiful day at Jackson. We spent almost our entire day on Rendezvous, 
 
 We spent the week at a family member's place in Denver and made a couple day trips up to Arapahoe Basin.
 
+{{< image-gallery images="images/alex_at_abasin.webp|Alex at Arapahoe Basin|Alex standing in front of a trail sign showing the name of the train is Alex at Arapahoe Basin,images/mariah_at_abasin.webp|Mariah at Arapahoe Basin|Mariah standing in front of a trail sign showing the name of the train is Humbug at Arapahoe Basin,images/top_of_zuma.webp|Top of the Continental Divide|Top of the continental divide looking towards Zuma bowl with Keystone and Breckenridge visible in the background,images/riding_up_pali.webp|Pali Chair|Riding up Pallavicini chair" >}}
+
 {{< expandable-box title="February 16 - Arapahoe Basin, CO" vert="18,550ft">}}
 Had a great time back at the legend. Lapped some of my favorite runs and explored other parts of Zuma bowl and the East Wall.
 {{< /expandable-box >}}
@@ -91,6 +95,8 @@ Explored The Beavers a bit and brought Mariah along for a run off Zuma Cornice.
 ### Salt Lake City
 
 We spent a long weekend in Salt Lake City skiing Alta and Snowbird. My family came in to ski it with us. We stayed at the Residence Inn in Sandy. It was such a fun experience sharing Alta and Snowbird with our family and bringing them to some of our favorite mountains.
+
+{{< image-gallery images="images/helicopter_crash_mineral_basin.webp|Aftermath of the Helicopter Crash|Two helicopters crashed at the bottom of Mineral Basin lift. This photo was taken after riding the chair back up.,images/alta_pow_skis.webp|Demo skis for Powder day at Alta|Demoed some Atomic Bent Chetler Power Skis for a powder day at Alta and had a blast with them,images/family_at_snowbird.webp|Family at Snowbird|Standing in Mineral Basin after going through the Peruvian Tunnel at Snowbird" >}}
 
 {{< expandable-box title="February 22 - Snowbird, UT" vert="23,825ft">}}
 First run of the day for me, I see the National Guard helicopters come down the valley, and then crash. Pretty crazy to watch. It was a huge powder day too, so it sucked that they had to close mineral basin for the rest of the day. Spent the rest of the day going around the mountain exploring it more.
@@ -109,6 +115,8 @@ Did a half day and showed Alta to my dad.
 {{< /expandable-box >}}
 
 ### Tahoe
+
+{{< image-gallery images="images/family_at_alpine_meadows.webp|Family at Alpine Meadows|Uncle and Cousins skiing with us at Alpine Meadows,images/lake_tahoe_from_palisades.webp|Lake Tahoe from Palisades|View of Lake Tahoe from the top of Palisades." >}}
 
 We spent a couple days in Tahoe skiing Palisades and stayed with family at a friends place in Carnelian Bay.
 
@@ -164,7 +172,7 @@ My goggles and Helmet didn't change this year either. I did end up picking up co
 
 ### Outer Layer
 
-At Grand Targhee I decided to get some new gloves to keep my hands a bit warmer in the frigid Teton Range. I picked up a pair of Hestra Three finger gloves. Hestra really makes a nice glove, and the price is definitely warranted.
+At Grand Targhee I decided to get some new gloves to keep my hands a bit warmer in the frigid Teton Range. I picked up a pair of Hestra Three finger gloves. Hestra really makes a nice glove and the price is definitely warranted.
 
 Otherwise, I still skied in my North Face Decagon Jacket and 686 Quantum pants from previous years.
 
