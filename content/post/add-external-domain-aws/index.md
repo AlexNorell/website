@@ -12,11 +12,11 @@ categories:
 draft: false
 ---
 
-I have a domain name, `norell.dev` that is regeisterd outside of AWS. I would like to use it for my development within AWS, but Amazon doesn't support the `.dev` domain name. Google is the gTLD owner, and Amazon and Google don't play well together. Even though Amazon won't let me transfer my domain to be registered in Route53, I can still configure it to be used using Hosted Zones.
+I have a domain name, `norell.dev` that is registered outside of AWS. I would like to use it for my development within AWS, but Amazon doesn't support the `.dev` domain name. Google is the gTLD owner, and Amazon and Google don't play well together. Even though Amazon won't let me transfer my domain to be registered in Route53, I can still configure it to be used using Hosted Zones.
 
 I will follow [this guide](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/migrate-dns-domain-inactive.html) to get it set up.
 
-# Steps
+## Steps
 
 1. Log into AWS Route53
 2. Add Hosted Zone
@@ -24,11 +24,11 @@ I will follow [this guide](https://docs.aws.amazon.com/Route53/latest/DeveloperG
 4. Change domain specific name server to the ones provided by AWS Route53
 5. Wait 24-48 hours if you had DNSSEC enabled
 
-# Configure website to use domain
+## Configure website to use domain
 
 Now that the domain is in Route53, I can set the domain for use by the website hosted in S3. You can find more information on that from the [previous post](../host-website-in-aws).
 
-## Get Hosted Zone information
+### Get Hosted Zone information
 
 I don't want to have terraform manage the top level hosted zone, so I will use a `data` type to retrieve the information from Route53. In `domain.tf` I added:
 
@@ -50,9 +50,9 @@ data "aws_route53_zone" "domain" {
 
 I want to make this generic, so I created variables, one for the generic top level domain name, and one for the subdomain. In this case, it is `norell.dev` and `www`.
 
-## Reconfigure S3 Bucket
+### Reconfigure S3 Bucket
 
-I created the S3 bucket for this website with the incorrect name. It needs to be **exactly** the same name as the domain name for Route53 to route to it. Since we have a varible for the subdomain now, and we have a data object for the domain hosted zone, we can use those to define the bucket name.
+I created the S3 bucket for this website with the incorrect name. It needs to be **exactly** the same name as the domain name for Route53 to route to it. Since we have a variable for the subdomain now, and we have a data object for the domain hosted zone, we can use those to define the bucket name.
 
 
 In `website.tf`:
@@ -63,7 +63,7 @@ resource "aws_s3_bucket" "website" {
 ...
 ```
 
-## Create the alias
+### Create the alias
 
 To add the alias for the bucket, I added the alias definition for the subdomain
 

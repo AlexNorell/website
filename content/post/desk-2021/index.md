@@ -15,7 +15,7 @@ images:
 - images/under.jpeg
 ---
 
-# Desk overview
+## Desk overview
 
 Since the beginning of the coronavirus lock downs in March 2020, I've been slowly adding on to my desk. I was happy with my home office desk before lock down started, but as I worked from home I wanted a couple more features. I added another monitor and stepped up my video call quality.
 

@@ -35,11 +35,11 @@ $ curl www.norell.dev
 S3 does not support hosting content with HTTPS, so I will need to set up CloudFront to act as an intermediary between the S3 bucket, and the requester. CloudFront is designed to make static content like a website available all over the world. It moves the content closer to the requester, giving the user a much better experience. It also has the benefit of allowing HTTPS support.
 
 
-# Configuring Certificate
+## Configuring Certificate
 
 I first need to create a certificate to use for Cloudfront. For the certificate to work with CloudFront, it **must** be in `us-east-1`. If the certificate isn't in that region, CloudFront will not work. All of my website so far has been created in `us-west-1`, and I want to continue using that region. I need to create a separate region provider just for the certificate.
 
-## US East Provider
+### US East Provider
 
 In `main.tf`:
 
@@ -51,7 +51,7 @@ provider "aws" {
 }
 ```
 
-## Certificate Creation
+### Certificate Creation
 
 We will then be able to use this for the provider to create the certificate. The rest of the infrastructure will still be in `us-west-1`
 
@@ -68,7 +68,7 @@ resource "aws_acm_certificate" "www" {
 }
 ```
 
-## Certificate Validation
+### Certificate Validation
 
 This will create a certificate in the `us-east-1` in Certificate Manager. This cert isn't usable until we verify that we own the domain.
 
@@ -99,7 +99,7 @@ resource "aws_acm_certificate_validation" "www" {
 
 This will set up the certification validation settings, and create the Route53 DNS entries to confirm that we are in control of the domain.
 
-# CloudFront
+## CloudFront
 
 Now that we have a certificate, we can create a CloudFront Distribution.
 
@@ -148,7 +148,7 @@ resource "aws_cloudfront_distribution" "domain_distribution" {
 }
 ```
 
-# Update Route53
+## Update Route53
 
 We need to update the route in Route53 to send requests to CloudFront, rather than S3.
 
