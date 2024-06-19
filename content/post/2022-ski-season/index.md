@@ -94,7 +94,7 @@ Explored The Beavers a bit and brought Mariah along for a run off Zuma Cornice.
 
 ### Salt Lake City
 
-We spent a long weekend in Salt Lake City skiing Alta and Snowbird. My family came in to ski it with us. We stayed at the Residence Inn in Sandy. It was such a fun experience sharing Alta and Snowbird with our family and bringing them to some of our favorite mountains.
+We spent a long weekend in Salt Lake City skiing Alta and Snowbird. My family came to Utah to ski it with us. We stayed at the Residence Inn in Sandy. It was such a fun experience sharing Alta and Snowbird with our family and bringing them to some of our favorite mountains.
 
 {{< image-gallery images="images/helicopter_crash_mineral_basin.webp|Aftermath of the Helicopter Crash|Two helicopters crashed at the bottom of Mineral Basin lift. This photo was taken after riding the chair back up.,images/alta_pow_skis.webp|Demo skis for Powder day at Alta|Demoed some Atomic Bent Chetler Power Skis for a powder day at Alta and had a blast with them,images/family_at_snowbird.webp|Family at Snowbird|Standing in Mineral Basin after going through the Peruvian Tunnel at Snowbird" >}}
 

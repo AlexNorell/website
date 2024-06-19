@@ -105,5 +105,4 @@ xlarge
 XLR
 youtube
 zipfit
-Zuma
 zuma
