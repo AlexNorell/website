@@ -28,7 +28,7 @@ The truck was found a day later in Oakland with the interior completely stripped
 
 We had obligations to drive up to Idaho for a trip to Grand Targhee at the end of January. The following weeks were spent trying to work with insurance and to plan how we were going to get our trip back on track. We flew up to Idaho for the trip to Grand Targhee and bought a new truck while there.
 
-We ended up buying a 2007 Chevrolet Avalanche. We thought about getting one back when looking for our previous truck, but were conviced that it would not be as practical. While that might be true for truck stuff, it is exactly what we need for the stuff that we want to do with it; drive it a bunch of miles, be comfortable, and have a covered truck bed. When we need a full length truck bed, we can drop the seats and the midgate and have a full 8 foot bed. When we don't need that, we still have a bit more than 5 feet of length that is fully covered and locked.
+We ended up buying a 2007 Chevrolet Avalanche. We thought about getting one back when looking for our previous truck, but were convinced that it would not be as practical. While that might be true for truck stuff, it is exactly what we need for the stuff that we want to do with it; drive it a bunch of miles, be comfortable, and have a covered truck bed. When we need a full length truck bed, we can drop the seats and the midgate and have a full 8 foot bed. When we don't need that, we still have a bit more than 5 feet of length that is fully covered and locked.
 
 {{< img src="images/new_truck.webp" alt="Alex standing in front of his new white Chevrolet Avalanche." >}}
 

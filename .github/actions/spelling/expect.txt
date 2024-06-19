@@ -1,6 +1,8 @@
-
+abasin
 Akitio
+alex
 alexnorell
+alta
 Altabird
 Asus
 Automator
@@ -11,6 +13,7 @@ Brahmas
 browserconfig
 CDK
 certbot
+Chetler
 dalbello
 Debian
 DEFCON
@@ -20,6 +23,7 @@ DMags
 dotnet
 downsides
 dracula
+Dreamcatcher
 dvo
 Dynastar
 Elgato
@@ -33,19 +37,23 @@ gladed
 gmax
 goldmark
 goode
+hestra
 Hifiman
 hugomod
 hyvent
 iotvillage
 JBL
 Jira
+Kimpton
 linkedin
 Logitech
 Lousie
 lowendbox
 Mariah
+mariah
 mic
 Micca
+midgate
 Munki
 Namecheap
 nas
@@ -55,6 +63,7 @@ norell
 Norquay
 northface
 Oplessly
+Pallavicini
 panterra
 peaceiris
 Pendect
@@ -65,8 +74,10 @@ Raleno
 regeisterd
 revelstoke
 rsyncer
+Sacajawea
 selfie
 Sennheiser
+Sipg
 Skiier
 slopeside
 smartwool
@@ -74,6 +85,7 @@ sni
 snowboard
 subwoofer
 Sundara
+tahoe
 terabytes
 terraform
 tfstates
@@ -94,3 +106,4 @@ XLR
 youtube
 zipfit
 Zuma
+zuma
