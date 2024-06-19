@@ -12,7 +12,7 @@ categories:
 draft: false
 ---
 
-I have a domain name, `norell.dev` that is regeisterd outside of AWS. I would like to use it for my development within AWS, but Amazon doesn't support the `.dev` domain name. Google is the gTLD owner, and Amazon and Google don't play well together. Even though Amazon won't let me transfer my domain to be registered in Route53, I can still configure it to be used using Hosted Zones.
+I have a domain name, `norell.dev` that is registered outside of AWS. I would like to use it for my development within AWS, but Amazon doesn't support the `.dev` domain name. Google is the gTLD owner, and Amazon and Google don't play well together. Even though Amazon won't let me transfer my domain to be registered in Route53, I can still configure it to be used using Hosted Zones.
 
 I will follow [this guide](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/migrate-dns-domain-inactive.html) to get it set up.
 
@@ -52,7 +52,7 @@ I want to make this generic, so I created variables, one for the generic top lev
 
 ### Reconfigure S3 Bucket
 
-I created the S3 bucket for this website with the incorrect name. It needs to be **exactly** the same name as the domain name for Route53 to route to it. Since we have a varible for the subdomain now, and we have a data object for the domain hosted zone, we can use those to define the bucket name.
+I created the S3 bucket for this website with the incorrect name. It needs to be **exactly** the same name as the domain name for Route53 to route to it. Since we have a variable for the subdomain now, and we have a data object for the domain hosted zone, we can use those to define the bucket name.
 
 
 In `website.tf`:
