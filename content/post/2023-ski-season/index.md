@@ -101,7 +101,7 @@ Last day in Jackson, but started a bit later like the other days. There was some
 
 ### Utah Part 1
 
-I drove down Salt Lake City and bounced around the greater area for a couple weeks. During this time, some co-workers and Mariah came in to town separately to ski.
+I drove down Salt Lake City and bounced around the greater area for a couple weeks. During this time, some co-workers and Mariah came into town separately to ski.
 
 With my change to the Ikon pass this year, I was able to try out a bunch of resorts in Salt Lake City that I wasn't able to in the past. This gave me a reason to spend time up in Ogden to try out Snowbasin. Snowbasin was a such a welcome surprise, with it not being crowded at all and having great snow and terrain.
 
@@ -179,7 +179,7 @@ First time at Ajax and I can understand the appeal for the wealthy. The lift is 
 
 ### Utah Part 2
 
-On my way back to California, I stopped in Salt Lake city for a couple days of skiing. Mariah flew in to ski too, and we hit up Snowbird and Snowbasin. On the way out of town, I got a quick day in at Alta too.
+On my way back to California, I stopped in Salt Lake city for a couple days of skiing. Mariah flew into ski too, and we hit up Snowbird and Snowbasin. On the way out of town, I got a quick day in at Alta too.
 
 {{< image-gallery images="images/alta_greeley.webp|Greeley Bowl at Alta|Greeley Bowl at Alta,images/snowbird_cirque.webp|The Cirque at Snowbird|The Cirque at Snowbird,images/snowbird_mineral_basin.webp|Mineral Basin at Snowbird|Nice weather in the Basin,images/snowbird_porcupine.webp|Porcupine at Snowbird|A wild porcupine at Snowbird" >}}
 
@@ -204,7 +204,7 @@ By this time in the season, this had already been the deepest season in recorded
 {{< image-gallery images="images/tahoe_city_snow_berms.webp|Snow berms in Tahoe City|6ft tall snow berms surrounding the side walk in Tahoe City,images/palisades_avalanche_debris.webp|Avalanche Debris off Granite Chief|Rubble from an avalanche in the Granite Chief area of Palisades" >}}
 
 {{< expandable-box title="March 16 - Palisades, CA" vert="11,843ft" >}}
-Poked around the mountain to see how the snow coverage was. It was crazy to see how deep everything was. There was also a bunch of evidence of recent avalanches.
+Poked around the mountainto see how the snow coverage was. It was crazy to see how deep everything was. There was also a bunch of evidence of recent avalanches.
 {{< /expandable-box >}}
 
 {{< expandable-box title="March 17 - Alpine Meadows, CA" vert="7,786ft" >}}
@@ -256,7 +256,7 @@ We got on the snow and got everybody's ski legs back under them. We started a bi
 {{< /expandable-box >}}
 
 {{< expandable-box title="May 18 - Mammoth, CA" vert="8,436ft" >}}
-Another half day, but expanding our terrain to a couple of runs off the Summit with Cornice and Skyline.
+Another half day, but expanding our terrainto a couple of runs off the Summit with Cornice and Skyline.
 {{< /expandable-box >}}
 
 {{< expandable-box title="May 19 - Mammoth, CA" vert="14,510ft" >}}
@@ -347,7 +347,7 @@ For the majority of this season I drove my 2007 Chevrolet Avalanche. This is a f
 
 While in Colorado, the front right wheel bearing gave out and the truck needed to be towed to a shop and the bearing needed to be replaces. I had to scramble to handle that while also attending a work conference. Thankfully there was a shop in the neighborhood that was able to help me out that day.
 
-At the tail end of the main road trip, the truck started to make some noise and I had to take it in to a shop when I got home. The engine blew up to a known design issue and I had to put a new motor in it. Thankful that motor should be good for the next 3 years or 100,000 miles, since that is what the warranty is.
+At the tail end of the main road trip, the truck started to make some noise and I had to take it into a shop when I got home. The engine blew up to a known design issue and I had to put a new motor in it. Thankful that motor should be good for the next 3 years or 100,000 miles, since that is what the warranty is.
 
 ### Accommodations
 
