@@ -6,7 +6,7 @@ categories:
 tags:
   - Mountain Collective
 draft: false
-summary: 2022 ski season recap including mountains visited, gear changed, and travel notes.
+description: A recap of the 2022 ski season including mountains visited, gear changed, and travel notes.
 ---
 
 We bought Mountain Collective passes for the third year in a row. The pandemic wasn't fully over and we really wanted to do a road trip to hit all of the western US mountains. We had bought a truck after buying our house and were planning on using that to get around the mountains. 
@@ -22,7 +22,7 @@ We purchased a 2006 Chevrolet Silverado in July 2021 as a second vehicle mainly 
 
 On January 6th, just before 6AM, our truck was stolen from the street in front of our house. This threw a huge wrench in our plans.
 
-{{< youtube id=V7F7ce9Sipg title="Truck Stolen" loading=lazy >}}
+{{< youtube id=V7F7ce9Sipg title="Truck Stolen" >}}
 
 The truck was found a day later in Oakland with the interior completely stripped and no wheels, tires, tailgate, doors, or hood.
 
@@ -40,15 +40,15 @@ We ended up buying a 2007 Chevrolet Avalanche. We thought about getting one back
 
 The trip started off in Idaho with a drive over to Wyoming for a long weekend of skiing in Grand Targhee, WY. We stayed at a nice vacation rental in Driggs, ID.
 
-{{< expandable-box title="January 30 - Grand Targhee, WY" vert="25,964ft">}}
+{{< expandable-box title="January 30 - Grand Targhee, WY" vert="25,964ft" >}}
 Decent day at Grand Targhee with okay visibility. Ripped groomers most of the day.
 {{< /expandable-box >}}
 
-{{< expandable-box title="January 31 - Grand Targhee, WY" vert="18,671ft">}}
+{{< expandable-box title="January 31 - Grand Targhee, WY" vert="18,671ft" >}}
 Bad visibility up top. Spent the day ripping groomer laps on the Sacajawea Chair.
 {{< /expandable-box >}}
 
-{{< expandable-box title="February 1 - Grand Targhee, WY" vert="15,200ft">}}
+{{< expandable-box title="February 1 - Grand Targhee, WY" vert="15,200ft" >}}
 Better visibility. Did a half day with 5 laps off Dreamcatcher.
 {{< /expandable-box >}}
 
@@ -56,11 +56,11 @@ Better visibility. Did a half day with 5 laps off Dreamcatcher.
 
 We spent a week in downtown Bozeman, working from local coffee shops and getting up to Big Sky two times. We stayed at the Kimpton Armory Hotel in downtown Bozeman.
 
-{{< expandable-box title="February 6 - Big Sky, MT" vert="25,217ft">}}
+{{< expandable-box title="February 6 - Big Sky, MT" vert="25,217ft" >}}
 Looked all over the mountain for steep. Only found it in a couple places. For context, Big Sky had just started charging $80 for access to the top of the mountain where the steep was. We didn't feel like spending money on an additional lift ticket. We also probably weren't ready to ski a lot of the stuff off the top. We also kept running into bare spots on the runs and rocks. There really wasn't a lot of snow coverage.
 {{< /expandable-box >}}
 
-{{< expandable-box title="February 11 - Big Sky, MT" vert="18,163ft">}}
+{{< expandable-box title="February 11 - Big Sky, MT" vert="18,163ft" >}}
 We spent most of the time getting further up on the mountain and exploring a bit more. Big Sky is a really big mountain, and we didn't even cover half of it.
 {{< /expandable-box >}}
 
@@ -70,11 +70,11 @@ We spent the weekend in Jackson, staying in the Motel 6. It was clean, but defin
 
 {{< image-gallery images="images/mariah_at_jackson_hole.webp|Top of the tram|Mariah at the top of Rendezvous Mountain at Jackson Hole" >}}
 
-{{< expandable-box title="February 12 - Jackson Hole, WY" vert="29,564ft">}}
+{{< expandable-box title="February 12 - Jackson Hole, WY" vert="29,564ft" >}}
 Beautiful blue sky day in Jackson. It was cold, but not extremely cold. From what I understand, we got incredibly lucky with this weather. We explored the mountain and tried to ride every lift. My favorite stuff was off of Sublette and the Tram.
 {{< /expandable-box >}}
 
-{{< expandable-box title="February 13 - Jackson Hole, WY" vert="20,417ft">}}
+{{< expandable-box title="February 13 - Jackson Hole, WY" vert="20,417ft" >}}
 Another beautiful day at Jackson. We spent almost our entire day on Rendezvous, lapping the tram, Sublette, and Thunder.
 {{< /expandable-box >}}
 
@@ -84,11 +84,11 @@ We spent the week at a family member's place in Denver and made a couple day tri
 
 {{< image-gallery images="images/alex_at_abasin.webp|Alex at Arapahoe Basin|Alex standing in front of a trail sign showing the name of the train is Alex at Arapahoe Basin,images/mariah_at_abasin.webp|Mariah at Arapahoe Basin|Mariah standing in front of a trail sign showing the name of the train is Humbug at Arapahoe Basin,images/top_of_zuma.webp|Top of the Continental Divide|Top of the continental divide looking towards Zuma bowl with Keystone and Breckenridge visible in the background,images/riding_up_pali.webp|Pali Chair|Riding up Pallavicini chair" >}}
 
-{{< expandable-box title="February 16 - Arapahoe Basin, CO" vert="18,550ft">}}
+{{< expandable-box title="February 16 - Arapahoe Basin, CO" vert="18,550ft" >}}
 Had a great time back at the legend. Lapped some of my favorite runs and explored other parts of Zuma bowl and the East Wall.
 {{< /expandable-box >}}
 
-{{< expandable-box title="February 19 - Arapahoe Basin, CO" vert="12,490ft">}}
+{{< expandable-box title="February 19 - Arapahoe Basin, CO" vert="12,490ft" >}}
 Explored The Beavers a bit and brought Mariah along for a run off Zuma Cornice.
 {{< /expandable-box >}}
 
@@ -98,19 +98,19 @@ We spent a long weekend in Salt Lake City skiing Alta and Snowbird. My family ca
 
 {{< image-gallery images="images/helicopter_crash_mineral_basin.webp|Aftermath of the Helicopter Crash|Two helicopters crashed at the bottom of Mineral Basin lift. This photo was taken after riding the chair back up.,images/alta_pow_skis.webp|Demo skis for Powder day at Alta|Demoed some Atomic Bent Chetler Power Skis for a powder day at Alta and had a blast with them,images/family_at_snowbird.webp|Family at Snowbird|Standing in Mineral Basin after going through the Peruvian Tunnel at Snowbird" >}}
 
-{{< expandable-box title="February 22 - Snowbird, UT" vert="23,825ft">}}
+{{< expandable-box title="February 22 - Snowbird, UT" vert="23,825ft" >}}
 First run of the day for me, I see the National Guard helicopters come down the valley, and then crash. Pretty crazy to watch. It was a huge powder day too, so it sucked that they had to close mineral basin for the rest of the day. Spent the rest of the day going around the mountain exploring it more.
 {{< /expandable-box >}}
 
-{{< expandable-box title="February 23 - Alta, UT" vert="21,371ft">}}
+{{< expandable-box title="February 23 - Alta, UT" vert="21,371ft" >}}
 Huge powder day again. Everything on the mountain was so much fun to ski. Waist deep powder in some spots, and everything I wanted to ski was open.
 {{< /expandable-box >}}
 
-{{< expandable-box title="February 26 - Snowbird, UT" vert="20,236ft">}}
+{{< expandable-box title="February 26 - Snowbird, UT" vert="20,236ft" >}}
 All the family was out this day and we brought them around the mountain to show them everything. Mineral Basin was open again, so everybody got to see the two wrecked helicopters. Watched my cousin tomahawk down lower cirque.
 {{< /expandable-box >}}
 
-{{< expandable-box title="February 27 - Alta, UT" vert="10,371ft">}}
+{{< expandable-box title="February 27 - Alta, UT" vert="10,371ft" >}}
 Did a half day and showed Alta to my dad.
 {{< /expandable-box >}}
 
@@ -120,11 +120,11 @@ Did a half day and showed Alta to my dad.
 
 We spent a couple days in Tahoe skiing Palisades and stayed with family at a friends place in Carnelian Bay.
 
-{{< expandable-box title="March 20 - Alpine Meadows, CA" vert="17,927ft">}}
+{{< expandable-box title="March 20 - Alpine Meadows, CA" vert="17,927ft" >}}
 Skied with my uncle and cousins.  Had a lot of fun in the late spring snow.
 {{< /expandable-box >}}
 
-{{< expandable-box title="March 22 - Palisades, CA" vert="13,501ft">}}
+{{< expandable-box title="March 22 - Palisades, CA" vert="13,501ft" >}}
 Had a blast skiing a half day with the family before parting ways. Blue sky day.
 {{< /expandable-box >}}
 
@@ -132,11 +132,11 @@ Had a blast skiing a half day with the family before parting ways. Blue sky day.
 
 We finally had a chance to get down to Mammoth to ski. We had a wedding in Riverside to attend and instead of driving back up interstate 5, we drove to Mammoth Lakes and spent the weekend there. We stayed in the Westin which made it super easy to get on the mountain every day.
 
-{{< expandable-box title="April 3 - Mammoth, CA" vert="10,266ft">}}
+{{< expandable-box title="April 3 - Mammoth, CA" vert="10,266ft" >}}
 First time at Mammoth and had no idea what to expect. Ended up skiing a shorter amount of time than I would have liked due to Mariah not feeling well.
 {{< /expandable-box >}}
 
-{{< expandable-box title="April 4 - Mammoth, CA" vert="18,081ft">}}
+{{< expandable-box title="April 4 - Mammoth, CA" vert="18,081ft" >}}
 Beautiful day, but snow was starting to get slushy. Enjoyed hitting Cornice Bowl and Skyline a couple times.
 {{< /expandable-box >}}
 

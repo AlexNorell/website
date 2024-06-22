@@ -6,7 +6,7 @@ categories:
 tags:
   - Mountain Collective
 draft: false
-summary: 2020 ski season recap including mountains visited, gear changed, and travel notes.
+description: A recap of the 2020 ski season including mountains visited, gear changed, and travel notes.
 ---
 
 This was the first year I got back into skiing after graduating from college, and my wife and I decided to get Mountain Collective passes. We figured this would motivate us to explore and experience a variety of resorts instead of just sticking to our usual routine of driving up to Tahoe. It was an exciting way to jump back into my love for skiing while also turning it into an adventure for both of us.
@@ -95,7 +95,7 @@ A storm came through the previous day and Kachina peak opened up. We got some am
 
 Part of the reason to get the Mountain Collective pass was to ski in Canada, and to travel to Banff. We flew into Calgary, rented a car and drove straight to Revelstoke to start the trip off. We spent two nights at the Sandman Hotel and then drove back towards Calgary to spend an entire week at the Banff Warm Springs Hotel. We stayed at the Airport Marriott on the way out to make our 6 AM flight back home.
 
-{{< image-gallery images="images/revelstoke.webp|Revelstoke|Overlooking the Colombia River from the top of Revelstoke,images/banff_sunshine.webp|Banff Sunshine Village|Alex and Mariah taking a selfie inside the Orange Bubble of the Tee Pee Town Luxury Express Quad at Sunshine Village,images/lake_louise.webp|Lake Louise|Alex skiing Ptarmigan Glades off the Ptarmigan chain at Lake Louise." >}}
+{{< image-gallery images="images/revelstoke.webp|Revelstoke|Overlooking the Columbia River from the top of Revelstoke,images/banff_sunshine.webp|Banff Sunshine Village|Alex and Mariah taking a selfie inside the Orange Bubble of the Tee Pee Town Luxury Express Quad at Sunshine Village,images/lake_louise.webp|Lake Louise|Alex skiing Ptarmigan Glades off the Ptarmigan chain at Lake Louise." >}}
 
 {{< expandable-box title="February 23 - Revelstoke, BC" >}}
 First time skiing in Canada and first time at Revelstoke. This quickly became my favorite mountain of the season due to the amazing snow quality and gladed skiing.
@@ -105,19 +105,19 @@ First time skiing in Canada and first time at Revelstoke. This quickly became my
 Another amazing day with fresh snow coming down. 
 {{< /expandable-box >}}
 
-{{< expandable-box title="February 26 - Lake Lousie, AB" vert="22,165ft">}}
+{{< expandable-box title="February 26 - Lake Lousie, AB" vert="22,165ft" >}}
 First time at Lake Louise. Very fun mountain with amazing views.
 {{< /expandable-box >}}
 
-{{< expandable-box title="February 27 - Banff Sunshine Village, AB" vert="14,189ft">}}
+{{< expandable-box title="February 27 - Banff Sunshine Village, AB" vert="14,189ft" >}}
 First time at Sunshine Village and wasn't super impressed. This was mostly due to the really long traverse to go between sections.
 {{< /expandable-box >}}
 
-{{< expandable-box title="February 28 - Mount Norquay, AB" vert="9,869ft">}}
+{{< expandable-box title="February 28 - Mount Norquay, AB" vert="9,869ft" >}}
 First time at Norquay. Completed the SkiBig3 challenge and picked up my free swag. I actually enjoyed the terrain at Norquay more than what I skied at Sunshine Village.
 {{< /expandable-box >}}
 
-{{< expandable-box title="February 29 - Lake Louise, AB" vert="14,086ft">}}
+{{< expandable-box title="February 29 - Lake Louise, AB" vert="14,086ft" >}}
 Fun time at Lake Louise with a bunch of fresh snow the previous day.
 {{< /expandable-box >}}
 
@@ -125,11 +125,11 @@ Fun time at Lake Louise with a bunch of fresh snow the previous day.
 
 My dad was out in Breckenridge skiing and invited me to join him. It turned out to be my last time skiing in 2020. I flew into Denver, rented a car, and drove up to Breckenridge, where I stayed with family friends.
 
-{{< expandable-box title="March 7 - Breckenridge, CO" vert="14,697ft">}}
+{{< expandable-box title="March 7 - Breckenridge, CO" vert="14,697ft" >}}
 skied Whale Tale a bunch and some Peak 6.
 {{< /expandable-box >}}
 
-{{< expandable-box title="March 8 - Arapahoe Basin, CO" vert="11,516ft">}}
+{{< expandable-box title="March 8 - Arapahoe Basin, CO" vert="11,516ft" >}}
 Brought my Dad to Arapahoe Basin and took him down Pali.
 {{< /expandable-box >}}
 

@@ -6,6 +6,7 @@ categories:
 tags:
   - Mountain Collective
 draft: false
+description: A recap of the 2021 ski season including mountains visited, gear changed, and travel notes.
 ---
 
 COVID-19 really screwed this year up for us. We had Mountain Collective Passes, but we didn't feel comfortable traveling, and we didn't travel for skiing until after Mariah had received her first vaccine shot. Due to all this, we only skied three times, and all of them at Palisades Tahoe.
@@ -18,7 +19,7 @@ COVID-19 really screwed this year up for us. We had Mountain Collective Passes, 
 
 We drove up the night before and stayed at the Best Western Plus in Truckee for two nights before driving home.
 
-{{< expandable-box title="March 30 - Palisades, CA" vert="22,388ft">}}
+{{< expandable-box title="March 30 - Palisades, CA" vert="22,388ft" >}}
 Great conditions and wonderful blue sky day. Lapped Granite Chief for most of it.
 {{< /expandable-box >}}
 
