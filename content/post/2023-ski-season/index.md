@@ -204,7 +204,7 @@ By this time in the season, this had already been the deepest season in recorded
 {{< image-gallery images="images/tahoe_city_snow_berms.webp|Snow berms in Tahoe City|6ft tall snow berms surrounding the side walk in Tahoe City,images/palisades_avalanche_debris.webp|Avalanche Debris off Granite Chief|Rubble from an avalanche in the Granite Chief area of Palisades" >}}
 
 {{< expandable-box title="March 16 - Palisades, CA" vert="11,843ft" >}}
-Poked around the mountainto see how the snow coverage was. It was crazy to see how deep everything was. There was also a bunch of evidence of recent avalanches.
+Poked around the mountain to see how the snow coverage was. It was crazy to see how deep everything was. There was also a bunch of evidence of recent avalanches.
 {{< /expandable-box >}}
 
 {{< expandable-box title="March 17 - Alpine Meadows, CA" vert="7,786ft" >}}
@@ -256,7 +256,7 @@ We got on the snow and got everybody's ski legs back under them. We started a bi
 {{< /expandable-box >}}
 
 {{< expandable-box title="May 18 - Mammoth, CA" vert="8,436ft" >}}
-Another half day, but expanding our terrainto a couple of runs off the Summit with Cornice and Skyline.
+Another half day, but expanding our terrain to a couple of runs off the Summit with Cornice and Skyline.
 {{< /expandable-box >}}
 
 {{< expandable-box title="May 19 - Mammoth, CA" vert="14,510ft" >}}
