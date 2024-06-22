@@ -7,4 +7,5 @@ tags:
   - Ikon
   - Epic
 draft: true
+description: A recap of the 2023 ski season including mountains visited, gear changed, and travel notes.
 ---

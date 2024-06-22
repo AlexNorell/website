@@ -72,11 +72,10 @@ Radeon
 Raleno
 revelstoke
 rsyncer
-Sacajawea
+Sacajawea 
 selfie
 Sennheiser
 Sipg
-Skiier
 slopeside
 smartwool
 sni

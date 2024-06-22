@@ -15,7 +15,7 @@ Last week, [IoTVillage](https://iotvillage.org) hosted a virtual Capture the Fla
 
 The CTF is set up as a 3 tiered network with vulnerable devices in each network. You connect into the network via a VPN and it drops you into level one. There are no instructions other than the name of product and what we need to retrieve from the device. These devices are all IoT devices with known vulnerabilities: Network Attached Storage Devices, IP Cameras, Consumer Routers, etc.
 
-{{< img src="images/rack.webp" alt="IoT Village SOHOplessly Broken Rack">}}
+{{< img src="images/rack.webp" alt="IoT Village SOHOplessly Broken Rack" >}}
 
 Myself and a friend worked through most of level one over the two day event. We had already attempted this CTF last year DEFCON 28. Some of the challenges were the same and we were able to use the same exploits to grab new flags. We also did a much better job of some of the static analysis flags. In the end, we ended up tying for 2nd place, which is much better than our 14th place finish at DEFCON 28.
 
