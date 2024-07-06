@@ -18,3 +18,5 @@ github.com/alexnorell/hugo-theme-m10c v0.0.0-20240622150016-7fac25e01d08 h1:tCXq
 github.com/alexnorell/hugo-theme-m10c v0.0.0-20240622150016-7fac25e01d08/go.mod h1:SN/2MRUYgcXV23RfIvIAXNR3gjyLscRY6up268lEEBs=
 github.com/alexnorell/hugo-theme-m10c v0.0.0-20240706100911-11911a4e32bc h1:JwnamSiH1N4w5FgU0hLL7Hp0zib50MdME9WrKC2IODs=
 github.com/alexnorell/hugo-theme-m10c v0.0.0-20240706100911-11911a4e32bc/go.mod h1:SN/2MRUYgcXV23RfIvIAXNR3gjyLscRY6up268lEEBs=
+github.com/alexnorell/hugo-theme-m10c v0.0.0-20240706103316-4304b3d25cf3 h1:S+dg4vus0W5w2H/WjZu5veyFF48BsQhbc5Udh6BvxWE=
+github.com/alexnorell/hugo-theme-m10c v0.0.0-20240706103316-4304b3d25cf3/go.mod h1:SN/2MRUYgcXV23RfIvIAXNR3gjyLscRY6up268lEEBs=
