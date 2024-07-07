@@ -43,6 +43,7 @@ fqdns
 GINX
 gladed
 gmax
+goatcounter
 goldmark
 goode
 Granlibakken
