@@ -125,5 +125,8 @@ Worldmark
 xlarge
 XLR
 youtube
+Zigbee
 zipfit
+Zooz
 zuma
+zwave
