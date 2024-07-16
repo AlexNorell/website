@@ -34,7 +34,7 @@ I prefer to keep things controlled locally and with ZWave or Zigbee if possible.
 - Impact Driver
 - Screwdriver
 - Wire cutter and strippers
-- Drywall knife
+- Drywall saw
 
 ### Additional tools
 
@@ -59,6 +59,8 @@ Here are the steps.
 7. Wire the fan up
 
 In total it took 4 hours to install from opening up the box to turning on the fan. My install was a bit longer due to needing to cut through an unused attic floor and building something to hang the fan from.
+
+{{< image-gallery images="images/ceiling_hole.webp|Ceiling Hole|Alex looking through the hole cut in the ceiling and attic floor for the fan,images/damper_installed.webp|Damper Installed|Damper installed in the ceiling,images/junction_box.webp|Junction Box Wiring|Inside view of the junction box with the relay box and other wires,images/wiring_fan.webp|Wiring the fan|Alex wiring the fan in the attic. The fan can be seen in the background attached to lumber. The duct is already attached to the fan.,images/cover_installed.webp|Final Install|Looking up at the white cover hiding the damper in the ceiling." >}}
 
 ## Home Assistant
 
@@ -144,3 +146,13 @@ features:
 ```
 
 {{< img src="images/house_fan.webp" alt="House fan control entity in Home Assistant" >}}
+
+Additional automations can be set up with the fan entity, like automatically turning on when the temperature outside is less than the temperature inside and at least 1 window is open. It can also be automatically turned off if the windows are closed. The options are endless.
+
+## Review
+
+We have seen a dramatic improvement in the temperatures inside the house when turning it on. We can feel a breeze near the windows that are open and actively drawing in air, and the attic temperature drops to the same temperature as the house when running. I was expecting to see the temperature to drop even closer to the outside temperature, but I assume the thermal mass of the house is still holding on to a lot of heat energy.
+
+{{< img src="images/temperature.webp" alt="Temperature results" >}}
+
+The fan was turned on the first time at 10PM on July 14th, and you can quickly see the attic temperature drop. The previous night, July 13th, you can see the attic temperature stay well above the house temperature, keeping the house feeling warm. At night, a noticeable breeze is present in the house when the fan is running on low, and we both have been getting better quality sleep.
