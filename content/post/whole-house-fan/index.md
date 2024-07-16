@@ -8,7 +8,7 @@ tags:
   - zwave
   - home assistant
 draft: false
-description: Install a whole house fan and make it smart using Home Assistant and ZWave.
+description: Install a whole house fan from QuietCool and make it smart using Home Assistant and ZWave.
 ---
 
 We added a whole house fan to our house to bring in fresh air and aid in cooling down the house in the evening. The fan is fully controllable with Home Assistant using a couple ZWave relays.
