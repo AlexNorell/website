@@ -19,7 +19,7 @@ We went with a slightly oversized unit than our square footage and climate zone 
 
 {{< img src="images/official_wiring.webp" alt="Quiet Cool Wiring Diagram" >}}
 
-I prefer to keep things controlled locally and with ZWave or Zigbee if possible. I already had a ZWave mutli relay in the attic for controllling an exterior light and I had the necessary relays left to control the system. This also means I didn't need to run additional wires anywhere in my house. I only needed to run two 12-2 wires from the junction box housing the relay to the fan.
+I prefer to keep things controlled locally and with ZWave or Zigbee if possible. I already had a ZWave multi relay in the attic for controlling an exterior light and I had the necessary relays left to control the system. This also means I didn't need to run additional wires anywhere in my house. I only needed to run two 12-2 wires from the junction box housing the relay to the fan.
 
 {{< img src="images/wiring.webp" alt="Wiring Diagram" >}}
 

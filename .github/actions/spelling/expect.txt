@@ -127,3 +127,6 @@ XLR
 youtube
 zipfit
 zuma
+Zigbee
+Zooz
+zwave
