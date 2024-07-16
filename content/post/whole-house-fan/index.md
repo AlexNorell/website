@@ -155,4 +155,4 @@ We have seen a dramatic improvement in the temperatures inside the house when tu
 
 {{< img src="images/temperature.webp" alt="Temperature results" >}}
 
-The fan was turned on the first time at 10PM on July 14th, and you can quickly see the the attic temperature drop. The previous night, July 13th, you can see the attic temperature stay well above the house temperature, keeping the house feeling warm. At night, a noticeable breeze is present in the house when the fan is running on low, and we both have been getting better quality sleep.
+The fan was turned on the first time at 10PM on July 14th, and you can quickly see the attic temperature drop. The previous night, July 13th, you can see the attic temperature stay well above the house temperature, keeping the house feeling warm. At night, a noticeable breeze is present in the house when the fan is running on low, and we both have been getting better quality sleep.
