@@ -40,3 +40,17 @@
 
 # Twitter status
 \btwitter\.com/[^/\s"')]*(?:/status/\d+(?:\?[-_0-9a-zA-Z&=]*|)|)
+
+# Automatically suggested patterns
+# hit-count: 14 file-count: 1
+# hex runs
+\b[0-9a-fA-F]{16,}\b
+
+# hit-count: 1 file-count: 1
+# ssh
+(?:ssh-\S+|-nistp256) [-a-zA-Z=;:/0-9+]{12,}
+
+# hit-count: 1 file-count: 1
+# in a version of check-spelling after @0.0.21 printf markers won't be automatically consumed
+# printf markers
+(?<!\\)\\[nrt](?=[a-z]{2,})
