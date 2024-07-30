@@ -11,8 +11,7 @@ tags:
 categories:
   - Security
 draft: false
-description: >
-This comprehensive guide provides step-by-step instructions to set up GPG on macOS for software development, covering key generation, SSH authentication, and git commit signing. By following this tutorial, developers can create and manage GPG keys, configure their system for secure coding practices, and deploy keys to GitHub while adhering to best security practices, including removing the primary private key. Essential tools like brew, gnupg, and pinentry-mac are required, ensuring a streamlined setup process for enhanced security in software development.
+description: This comprehensive guide provides step-by-step instructions to set up GPG on macOS for software development, covering key generation, SSH authentication, and git commit signing. By following this tutorial, developers can create and manage GPG keys, configure their system for secure coding practices, and deploy keys to GitHub while adhering to best security practices, including removing the primary private key. Essential tools like brew, gnupg, and pinentry-mac are required, ensuring a streamlined setup process for enhanced security in software development.
 ---
 
 This guide covers everything you need to do to get GPG set up on macOS for software development. By the end of this guide, you will accomplish the following:
