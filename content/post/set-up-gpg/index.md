@@ -157,7 +157,7 @@ You have now created your primary GPG key. With this we will be able to generate
 
 ### Primary key fingerprint
 
-If you don't know what your primary key fingerprint is, run the following commmand: 
+If you don't know what your primary key fingerprint is, run the following command: 
 
 ```sh
 gpg --list-secret-keys --with-subkey-fingerprints
