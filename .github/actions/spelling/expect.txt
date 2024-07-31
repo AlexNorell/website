@@ -167,6 +167,7 @@ Yubi
 Yubico
 Yubikey
 YubiKey
+yubikey
 Zigbee
 zipfit
 Zooz
