@@ -11,7 +11,7 @@ tags:
 categories:
   - Security
 draft: false
-description:
+description: Learn how to transfer GPG keys to a YubiKey, disable YubiKey OTP, and configure WebAuthn for enhanced developer security. This guide also covers removing SMS authentication to achieve a strong security posture with physical and knowledge-based authentication, perfect for developers.
 ---
 
 This is a follow up to the [How To Set Up GPG on macOS](/post/set-up-gpg) guide We'll build on the GPG key configuration to move the storage off the machine itself to a physical key. We'll also cover setting up the YubiKey for other services and uses, like WebAuthn.
@@ -27,7 +27,7 @@ By the end of the guide you will:
 Some requirements:
 
 - GPG set up [following the guide](/post/set-up-gpg)
-- A [YubiKey](https://www.yubico.com/product/yubikey-5-series/)
+- A [YubiKey](https://www.yubico.com/product/YubiKey-5-series/)
 - `brew` installed
 
 ## What is a Hardware Key?
@@ -99,9 +99,9 @@ If your key also has NFC available, you'll probably want to disable that too
 ykman config nfc --disable otp
 ```
 
-## View Yubikey Contents
+## View YubiKey Contents
 
-We can view the GPG configuration of any connected Yubikey using the following command
+We can view the GPG configuration of any connected YubiKey using the following command
 
 ```sh
 gpg --card-status
@@ -134,7 +134,7 @@ Authentication key: [none]
 General key info..: [none]
 ```
 
-As we configure the Yubikey, some of these values will change. 
+As we configure the YubiKey, some of these values will change. 
 
 ## Reset Factory Defaults
 
@@ -302,7 +302,7 @@ General key info..: [none]
 
 ## Migrate GPG Keys
 
-Now that the Yubikey is configured with pins and additional information, we can add our keys to it. To do this, we'll use the `gpg --edit-key` console, using our primary key fingerprint.
+Now that the YubiKey is configured with pins and additional information, we can add our keys to it. To do this, we'll use the `gpg --edit-key` console, using our primary key fingerprint.
 
 ```sh
 gpg --edit-key $PRIMARY
@@ -331,7 +331,7 @@ ssb  ed25519/E4380C50A72281A6
 
 We can see that our primary private key is not available because it only says that subkeys are available.
 
-To move our subkey private keys to our yubikey, we need to select them and use the `keytocard` command.
+To move our subkey private keys to our YubiKey, we need to select them and use the `keytocard` command.
 
 ### Encryption Key
 
@@ -382,7 +382,7 @@ Please select where to store the key:
 Your selection? 2
 ```
 
-You will be prompted to put in your passphrase for the key as well as your yubikey admin pin.
+You will be prompted to put in your passphrase for the key as well as your YubiKey admin pin.
 
 At this point, the key is on the card, but it is also still available in 
 
@@ -413,7 +413,7 @@ Your selection? 1
 
 ### Clean up
 
-At this point, the keys are on the Yubikey, but they are also still available locally. We need to `save` the changes in the `gpg` console to delete the keys locally.
+At this point, the keys are on the YubiKey, but they are also still available locally. We need to `save` the changes in the `gpg` console to delete the keys locally.
 
 ```txt
 gpg> save
@@ -470,17 +470,28 @@ The `sec` key is our primary key and the `#` next to it indicates only the publi
 
 The `ssb` keys are our subkeys and the `>` next to them indicate the private keys are available externally, and we can see they are located on `card-no: 0006 28642652`.
 
-Everything is in order and we have our keys fully moved over to our Yubikey.
+Everything is in order and we have our keys fully moved over to our YubiKey.
 
 ## WebAuthn
 
+WebAuthn is a way to enhance your account security by adding a strong second factor to your login process. When you set it up with your YubiKey, you register the YubiKey as an additional login method on the service you want to use. The YubiKey creates a special cryptographic key pair, with the private key staying safe on the device and the public key being registered with the service. This adds a "has-a" factor to your security posture, meaning you need the physical YubiKey in addition to your password, the "knows-a" factor. This combination significantly boosts your account security, protecting you from phishing and other attacks.
+
 ### Add YubiKey to GitHub
 
+Use the power of your YubiKey to add WebAuthn 2FA to your GitHub account.
+
+1. Navigate over to https://github.com/settings/security
+1. In the **Two-factor methods** section, show the **Security keys** section.
+1. Add a nickname for you security key. I named mine my YubiKey model name.
+1. Click add
+1. Touch the metal part of your YubiKey
+1. Enter in a different 2FA method if prompted
+
+Now you should be able to use your YubiKey as a second factor of authentication.
 
 ### Other Services
 
 Yubico, the makers of YubiKey, have a [catalog](https://www.yubico.com/works-with-YubiKey/catalog/?series=1&sort=popular-for-individuals) of services that work with hardware keys. Go through your services and make sure that if it has YubiKey
-
 
 ### Backup
 
@@ -542,7 +553,7 @@ Make sure that the pin you are trying to set it to is at least 8 characters long
 
 ### Pin is locked
 
-If the wrong pin is entered on your Yubikey 3 times in a row, it will lock the PGP application completely until the Admin PIN is entered and unblocks the PIN. If you lock your YubiKey and you don't remember your Admin PIN, you will need to completely reset the OpenPGP application and you will lose all of your data on you YubiKey. This includes keys stored on the key.
+If the wrong pin is entered on your YubiKey 3 times in a row, it will lock the PGP application completely until the Admin PIN is entered and unblocks the PIN. If you lock your YubiKey and you don't remember your Admin PIN, you will need to completely reset the OpenPGP application and you will lose all of your data on you YubiKey. This includes keys stored on the key.
 
 Launch the GPG card console and edit the card
 
