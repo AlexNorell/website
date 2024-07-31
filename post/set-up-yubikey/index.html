@@ -1,0 +1,244 @@
+<!doctype html><html lang=en-us><head><title>How To Set Up YubiKey On macOS // Alex Norell</title>
+<link rel=apple-touch-icon sizes=57x57 href=/images/favicon/apple-icon-57x57.png><link rel=apple-touch-icon sizes=60x60 href=/images/favicon/apple-icon-60x60.png><link rel=apple-touch-icon sizes=72x72 href=/images/favicon/apple-icon-72x72.png><link rel=apple-touch-icon sizes=76x76 href=/images/favicon/apple-icon-76x76.png><link rel=apple-touch-icon sizes=114x114 href=/images/favicon/apple-icon-114x114.png><link rel=apple-touch-icon sizes=120x120 href=/images/favicon/apple-icon-120x120.png><link rel=apple-touch-icon sizes=144x144 href=/images/favicon/apple-icon-144x144.png><link rel=apple-touch-icon sizes=152x152 href=/images/favicon/apple-icon-152x152.png><link rel=apple-touch-icon sizes=180x180 href=/images/favicon/apple-icon-180x180.png><link rel=icon type=image/png sizes=192x192 href=/images/favicon/android-icon-192x192.png><link rel=icon type=image/png sizes=32x32 href=/images/favicon/favicon-32x32.png><link rel=icon type=image/png sizes=96x96 href=/images/favicon/favicon-96x96.png><link rel=icon type=image/png sizes=16x16 href=/images/favicon/favicon-16x16.png><link rel=manifest href=/manifest.json><meta name=msapplication-TileColor content="#E6EDF3"><meta name=msapplication-TileImage content="/images/favicon/ms-icon-144x144.png"><meta name=theme-color content="#161B22"><meta charset=utf-8><meta name=generator content="Hugo 0.130.0"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="Alex Norell"><meta name=description content="Learn how to transfer GPG keys to a YubiKey, disable YubiKey OTP, and configure WebAuthn for enhanced developer security. This guide also covers removing SMS authentication to achieve a strong security posture with physical and knowledge-based authentication, perfect for developers."><link rel=stylesheet href=/css/main.min.b7296b4112181466fc0f8388538fe1793eac3090b66e00b546b8cc8a12dfc5b9.css><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://alexnorell.com/post/set-up-yubikey/cover.webp"><meta name=twitter:title content="How To Set Up YubiKey On macOS"><meta name=twitter:description content="Learn how to transfer GPG keys to a YubiKey, disable YubiKey OTP, and configure WebAuthn for enhanced developer security. This guide also covers removing SMS authentication to achieve a strong security posture with physical and knowledge-based authentication, perfect for developers."><meta property="og:url" content="https://alexnorell.com/post/set-up-yubikey/"><meta property="og:site_name" content="Alex Norell"><meta property="og:title" content="How To Set Up YubiKey On macOS"><meta property="og:description" content="Learn how to transfer GPG keys to a YubiKey, disable YubiKey OTP, and configure WebAuthn for enhanced developer security. This guide also covers removing SMS authentication to achieve a strong security posture with physical and knowledge-based authentication, perfect for developers."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2024-07-30T12:00:00-07:00"><meta property="article:modified_time" content="2024-07-30T12:00:00-07:00"><meta property="article:tag" content="Git"><meta property="article:tag" content="GitHub"><meta property="article:tag" content="GPG"><meta property="article:tag" content="MacOS"><meta property="article:tag" content="SSH"><meta property="article:tag" content="YubiKey"><meta property="og:image" content="https://alexnorell.com/post/set-up-yubikey/cover.webp"></head><body><header class=app-header><header class=app-header><div class=sidebar-single><div class=sidebar-content><span class=app-header-title>Alex Norell</span><nav class=app-header-menu><a class=app-header-menu-item href=/>Home</a>
+-
+<a class=app-header-menu-item href=/about/>About</a>
+-
+<a class=app-header-menu-item href=/categories/>Categories</a>
+-
+<a class=app-header-menu-item href=/tags/>Tags</a></nav><div class=sidebar-toc><nav id=TableOfContents><ul><li><a href=#what-is-a-hardware-key>What is a Hardware Key?</a><ul><li><a href=#authentication-types>Authentication Types</a></li><li><a href=#yubikey-applications>YubiKey Applications</a></li></ul></li><li><a href=#install-tools>Install Tools</a></li><li><a href=#disable-yubikey-otp>Disable YubiKey OTP</a></li><li><a href=#view-yubikey-contents>View YubiKey Contents</a></li><li><a href=#reset-factory-defaults>Reset Factory Defaults</a><ul><li><a href=#set-admin-pin>Set Admin Pin</a></li><li><a href=#set-card-pin>Set Card Pin</a></li></ul></li><li><a href=#update-card-information>Update Card Information</a></li><li><a href=#migrate-gpg-keys>Migrate GPG Keys</a><ul><li><a href=#encryption-key>Encryption Key</a></li><li><a href=#authentication-key>Authentication Key</a></li><li><a href=#signing-key>Signing Key</a></li><li><a href=#clean-up>Clean up</a></li><li><a href=#review>Review</a></li></ul></li><li><a href=#webauthn>WebAuthn</a><ul><li><a href=#add-yubikey-to-github>Add YubiKey to GitHub</a></li><li><a href=#other-services>Other Services</a></li><li><a href=#backup>Backup</a></li></ul></li><li><a href=#disable-sms-2fa>Disable SMS 2FA</a></li><li><a href=#troubleshooting>Troubleshooting</a><ul><li><a href=#card-isnt-detected-by-gpg>Card isn&rsquo;t detected by GPG</a></li><li><a href=#cant-reset-admin-pin>Can&rsquo;t Reset Admin Pin</a></li><li><a href=#pin-is-locked>Pin is locked</a></li></ul></li></ul></nav></div></div></div></header></header><main class=app-container><article class=post><header class=post-header><h1 class=post-title>How To Set Up YubiKey On macOS</h1><div class=post-meta><div><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar"><title>calendar</title><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 
+Jul 30, 2024</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock"><title>clock</title><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 
+14 min read</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-folder"><title>folder</title><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg> 
+<a class=tag href=https://alexnorell.com/categories/security/>Security</a></div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag"><title>tag</title><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83.0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> 
+<a class=tag href=https://alexnorell.com/tags/git/>Git</a>
+<a class=tag href=https://alexnorell.com/tags/github/>GitHub</a>
+<a class=tag href=https://alexnorell.com/tags/gpg/>GPG</a>
+<a class=tag href=https://alexnorell.com/tags/macos/>MacOS</a>
+<a class=tag href=https://alexnorell.com/tags/ssh/>SSH</a>
+<a class=tag href=https://alexnorell.com/tags/yubikey/>YubiKey</a></div></div></header><div class=post-content><p>This is a follow up to the <a href=/post/set-up-gpg>How To Set Up GPG on macOS</a> guide We&rsquo;ll build on the GPG key configuration to move the storage off the machine itself to a physical key. We&rsquo;ll also cover setting up the YubiKey for other services and uses, like WebAuthn.</p><p>By the end of the guide you will:</p><ul><li>Disable YubiKey OTP</li><li>Move GPG keys to a YubiKey</li><li>Disable the macOS Smart Card prompt</li><li>Add a YubiKey to Web Services</li><li>Disable SMS Authentication</li></ul><p>Some requirements:</p><ul><li>GPG set up <a href=/post/set-up-gpg>following the guide</a></li><li>A <a href=https://www.yubico.com/product/YubiKey-5-series/>YubiKey</a></li><li><code>brew</code> installed</li></ul><h2 id=what-is-a-hardware-key>What is a Hardware Key?</h2><p>A hardware key, often referred to as a security key, is a physical device used to secure access to computers, networks, and other systems. Think of it as a more advanced, physical version of a password. These keys are used to authenticate a user&rsquo;s identity and provide a higher level of security compared to traditional password methods. They can be plugged into a USB port or connected via NFC, making them versatile for various devices.</p><h3 id=authentication-types>Authentication Types</h3><p>When it comes to authentication, there are three primary types:</p><ol><li><p><strong>Know-A (Something You Know):</strong> This is the classic password or PIN that users need to remember. It&rsquo;s the most common form of authentication but also the most vulnerable to attacks like phishing or brute force.</p></li><li><p><strong>Has-A (Something You Have):</strong> This is where hardware keys come into play. The physical key generates or holds authentication tokens that verify the user. It&rsquo;s akin to having a key to your house; without it, access is denied.</p></li><li><p><strong>Is-A (Something You Are):</strong> This involves biometric authentication, such as fingerprints, facial recognition, or retina scans. It&rsquo;s unique to the individual and provides a high level of security. This one can also be turned into a Has-A with enough force.</p></li></ol><h3 id=yubikey-applications>YubiKey Applications</h3><p>Your YubiKey offers various types of keys and authentication methods to enhance security. Here are the main ones:</p><ol><li><p><strong>FIDO2/WebAuthn:</strong> This is the latest standard for web authentication, providing strong, phishing-resistant two-factor authentication (2FA) and passwordless login.</p></li><li><p><strong>FIDO U2F:</strong> An older standard but still widely used, especially for 2FA. It offers an extra layer of security for online accounts.</p></li><li><p><strong>One-Time Passwords (OTP):</strong> YubiKeys can generate OTPs that are valid for a single session. This includes both time-based OTP (TOTP) and HMAC-based OTP (HOTP).</p></li><li><p><strong>PIV (Personal Identity Verification):</strong> This is used for smart card functionality, often in corporate environments for secure access to systems and buildings.</p></li><li><p><strong>OpenPGP:</strong> For those who need secure email and document signing, the YubiKey can store OpenPGP keys.</p></li></ol><h2 id=install-tools>Install Tools</h2><p>Everything installed in the <a href=/post/set-up-gpg/#install-tools>GPG guide</a> is required. Additionally, we&rsquo;ll need the YubiKey management tool.</p><ul><li><code>ykman</code>: YubiKey management software</li></ul><p>Install <code>ykman</code> using <code>brew</code></p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>brew install ykman
+</span></span></code></pre></div><h2 id=disable-yubikey-otp>Disable YubiKey OTP</h2><p>Have you ever sent a message like this?</p><div class=slack-message><div class=slack-message__avatar><img src=/images/avatar.small.webp alt="User Avatar"></div><div class=slack-message__content><div class=slack-message__header><span class=slack-message__username>Alex</span>
+<span class=slack-message__timestamp>13:69 PM</span></div><div class=slack-message__text>cccccbngctgrnlreuinvkktedheigunthctueiheifjr</div><div class=slack-message__reactions><div class=slack-message__reaction><span class=slack-message__reaction-emoji>🤣</span>
+<span>3</span></div><div class=slack-message__reaction><span class=slack-message__reaction-emoji>🔒</span>
+<span>1</span></div></div></div></div><p>When you touch your YubiKey when it is plugged in, it will type out a string and press enter. This string is a <a href=https://www.yubico.com/resources/glossary/yubico-otp/>YubiKey One Time Password</a> (YOTP) that is an alternative to the 6 digit <a href=https://en.wikipedia.org/wiki/Time-based_one-time_password>Time-based One Time Passwords</a> (TOTP) that you might be familiar with in an Authenticator application.</p><p>I personally don&rsquo;t use YOTP for anything and would much rather my YubiKey not type out secure strings when touched. So let&rsquo;s disable it.</p><p>Run the following command to disable it.</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>ykman config usb --disable otp
+</span></span></code></pre></div><p>If your key also has NFC available, you&rsquo;ll probably want to disable that too</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>ykman config nfc --disable otp
+</span></span></code></pre></div><h2 id=view-yubikey-contents>View YubiKey Contents</h2><p>We can view the GPG configuration of any connected YubiKey using the following command</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>gpg --card-status
+</span></span></code></pre></div><p>This will output something like this</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>Reader ...........: Yubico YubiKey FIDO CCID
+</span></span><span style=display:flex><span>Application ID ...: D2760001240100000006286426520000
+</span></span><span style=display:flex><span>Application type .: OpenPGP
+</span></span><span style=display:flex><span>Version ..........: 3.4
+</span></span><span style=display:flex><span>Manufacturer .....: Yubico
+</span></span><span style=display:flex><span>Serial number ....: 28646942
+</span></span><span style=display:flex><span>Name of cardholder: [not set]
+</span></span><span style=display:flex><span>Language prefs ...: [not set]
+</span></span><span style=display:flex><span>Salutation .......:
+</span></span><span style=display:flex><span>URL of public key : [not set]
+</span></span><span style=display:flex><span>Login data .......: [not set]
+</span></span><span style=display:flex><span>Signature PIN ....: not forced
+</span></span><span style=display:flex><span>Key attributes ...: rsa2048 rsa2048 rsa2048
+</span></span><span style=display:flex><span>Max. PIN lengths .: 127 127 127
+</span></span><span style=display:flex><span>PIN retry counter : 3 0 3
+</span></span><span style=display:flex><span>Signature counter : 0
+</span></span><span style=display:flex><span>KDF setting ......: off
+</span></span><span style=display:flex><span>UIF setting ......: Sign=off Decrypt=off Auth=off
+</span></span><span style=display:flex><span>Signature key ....: [none]
+</span></span><span style=display:flex><span>Encryption key....: [none]
+</span></span><span style=display:flex><span>Authentication key: [none]
+</span></span><span style=display:flex><span>General key info..: [none]
+</span></span></code></pre></div><p>As we configure the YubiKey, some of these values will change.</p><h2 id=reset-factory-defaults>Reset Factory Defaults</h2><p>Your YubiKey ships with insecure default credentials for managing the GPG application. The PIN is <code>123456</code> and the Admin PIN is <code>12345678</code>. We need to reset these to something that only you know. If we don&rsquo;t change these, somebody could take your YubiKey, unlock the key using the Admin PIN, and then export the private keys.</p><p>To make sure start with a fresh configuration run the following command to reset the OpenPGP (GPG) application to factory defaults.</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>ykman openpgp reset
+</span></span></code></pre></div><p>The defaults will print on the console once completed</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>PIN:         123456
+</span></span><span style=display:flex><span>Reset code:  NOT SET
+</span></span><span style=display:flex><span>Admin PIN:   12345678
+</span></span></code></pre></div><h3 id=set-admin-pin>Set Admin Pin</h3><p>We&rsquo;ll be using the <code>gpg --card-edit</code> console for configuring our key for use.</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>gpg --card-edit
+</span></span></code></pre></div><p>This will launch a <code>gpg/card</code> prompt. We need to get access to all of the commands, so we will use the <code>admin</code> command</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>gpg/card&gt; admin
+</span></span><span style=display:flex><span>Admin commands are allowed
+</span></span></code></pre></div><p>We will then use the <code>passwd</code> command to reset the PIN and Admin PIN. The pin can be between 8 and 127 characters long and can be symbols, letters, and numbers.</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-txt data-lang=txt><span style=display:flex><span>gpg/card&gt; passwd
+</span></span><span style=display:flex><span>gpg: OpenPGP card no. 0630110000040071660000020d204462 detected
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>1 - change PIN
+</span></span><span style=display:flex><span>2 - unblock PIN
+</span></span><span style=display:flex;background-color:#3d4148><span>3 - change Admin PIN
+</span></span><span style=display:flex><span>4 - set the Reset Code
+</span></span><span style=display:flex><span>Q - quit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Your selection? 3
+</span></span></code></pre></div><p>This will launch the pin-entry prompt:</p><ol><li>Enter the default admin pin: <code>12345678</code></li><li>Enter your new pin between <code>8</code> and <code>127</code> characters</li><li>Repeat your pin</li></ol><p>If everything worked, you&rsquo;ll see</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-txt data-lang=txt><span style=display:flex;background-color:#3d4148><span>PIN changed.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>1 - change PIN
+</span></span><span style=display:flex><span>2 - unblock PIN
+</span></span><span style=display:flex><span>3 - change Admin PIN
+</span></span><span style=display:flex><span>4 - set the Reset Code
+</span></span><span style=display:flex><span>Q - quit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Your selection?
+</span></span></code></pre></div><h3 id=set-card-pin>Set Card Pin</h3><p>This is the pin you will be using every time you want to sign a commit or authenticate using SSH. Make this short and easy to type.</p><p>Continue with where we were in setting the admin pin:</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>gpg --card-edit
+</span></span><span style=display:flex><span>gpg/card&gt; admin
+</span></span><span style=display:flex><span>Admin commands are allowed
+</span></span><span style=display:flex><span>gpg/card&gt; passwd
+</span></span><span style=display:flex><span>gpg: OpenPGP card no. 0630110000040071660000020d204462 detected
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>1 - change PIN
+</span></span><span style=display:flex><span>2 - unblock PIN
+</span></span><span style=display:flex><span>3 - change Admin PIN
+</span></span><span style=display:flex><span>4 - set the Reset Code
+</span></span><span style=display:flex><span>Q - quit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Your selection?
+</span></span></code></pre></div><p>We&rsquo;ll select the first option this time, and this will prompt for setting up pins using pin-entry</p><ol><li>Enter previous default pin: <code>123456</code></li><li>Enter your short, simple pin</li><li>Reenter your new pin</li></ol><p>If everything worked, you&rsquo;ll see the same output as before when changing the admin pin.</p><h2 id=update-card-information>Update Card Information</h2><p>Now that we have pins set up, we can also configure the card with additional information like name, language, username, and public key URL.</p><p>From the <code>card-edit</code> shell, use the <code>name</code> command and fill in the prompted information.</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>gpg/card&gt; name
+</span></span><span style=display:flex><span>Cardholder&#39;s surname: Norell
+</span></span><span style=display:flex><span>Cardholder&#39;s given name: Alex
+</span></span></code></pre></div><p>You can set your default language for use in applications that look for this information.</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>gpg/card&gt; lang
+</span></span><span style=display:flex><span>Language preferences: en
+</span></span></code></pre></div><p>You can set your default username that you use for services. This can be accessed programmatically.</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>gpg/card&gt; login
+</span></span><span style=display:flex><span>Login data (account name): alex
+</span></span></code></pre></div><p>You can also have your key point to your Public PGP key, which you can retrieve at your GitHub username.</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>gpg/card&gt; url
+</span></span><span style=display:flex><span>URL to retrieve public key: https://github.com/alexnorell.gpg
+</span></span></code></pre></div><p>And then quit when you&rsquo;re done.</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>gpg/card&gt; quit
+</span></span></code></pre></div><p>When you check your card status, you&rsquo;ll see your updated values in there.</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-txt data-lang=txt><span style=display:flex><span>Reader ...........: Yubico YubiKey FIDO CCID
+</span></span><span style=display:flex><span>Application ID ...: D2760001240100000006286426520000
+</span></span><span style=display:flex><span>Application type .: OpenPGP
+</span></span><span style=display:flex><span>Version ..........: 3.4
+</span></span><span style=display:flex><span>Manufacturer .....: Yubico
+</span></span><span style=display:flex><span>Serial number ....: 28646942
+</span></span><span style=display:flex;background-color:#3d4148><span>Name of cardholder: Alex Norell
+</span></span><span style=display:flex;background-color:#3d4148><span>Language prefs ...: en
+</span></span><span style=display:flex><span>Salutation .......:
+</span></span><span style=display:flex;background-color:#3d4148><span>URL of public key : https://github.com/alexnorell.gpg
+</span></span><span style=display:flex;background-color:#3d4148><span>Login data .......: alex
+</span></span><span style=display:flex><span>Signature PIN ....: not forced
+</span></span><span style=display:flex><span>Key attributes ...: rsa2048 rsa2048 rsa2048
+</span></span><span style=display:flex><span>Max. PIN lengths .: 127 127 127
+</span></span><span style=display:flex><span>PIN retry counter : 3 3 3
+</span></span><span style=display:flex><span>Signature counter : 0
+</span></span><span style=display:flex><span>KDF setting ......: off
+</span></span><span style=display:flex><span>UIF setting ......: Sign=off Decrypt=off Auth=off
+</span></span><span style=display:flex><span>Signature key ....: [none]
+</span></span><span style=display:flex><span>Encryption key....: [none]
+</span></span><span style=display:flex><span>Authentication key: [none]
+</span></span><span style=display:flex><span>General key info..: [none]
+</span></span></code></pre></div><h2 id=migrate-gpg-keys>Migrate GPG Keys</h2><p>Now that the YubiKey is configured with pins and additional information, we can add our keys to it. To do this, we&rsquo;ll use the <code>gpg --edit-key</code> console, using our primary key fingerprint.</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>gpg --edit-key <span style=color:#bc74c4;font-style:italic>$PRIMARY</span>
+</span></span></code></pre></div><p>Which will output something like this</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-txt data-lang=txt><span style=display:flex><span>gpg (GnuPG) 2.4.5; Copyright (C) 2024 g10 Code GmbH
+</span></span><span style=display:flex><span>This is free software: you are free to change and redistribute it.
+</span></span><span style=display:flex><span>There is NO WARRANTY, to the extent permitted by law.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex;background-color:#3d4148><span>Secret subkeys are available.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>pub  ed25519/1EFB4E6493D11756
+</span></span><span style=display:flex><span>     created: 2024-07-29  expires: 2025-07-29  usage: SC
+</span></span><span style=display:flex><span>     trust: ultimate      validity: ultimate
+</span></span><span style=display:flex><span>ssb  cv25519/6F5A20E5BB387778
+</span></span><span style=display:flex><span>     created: 2024-07-29  expires: 2025-07-29  usage: E
+</span></span><span style=display:flex><span>ssb  ed25519/3604FD5A162A94E8
+</span></span><span style=display:flex><span>     created: 2024-07-30  expires: 2025-07-30  usage: A
+</span></span><span style=display:flex><span>ssb  ed25519/E4380C50A72281A6
+</span></span><span style=display:flex><span>     created: 2024-07-30  expires: 2025-07-30  usage: S
+</span></span><span style=display:flex><span>[ultimate] (1). Alex Norell (Code Signing and Auth) &lt;alex@norell.co&gt;
+</span></span></code></pre></div><p>We can see that our primary private key is not available because it only says that subkeys are available.</p><p>To move our subkey private keys to our YubiKey, we need to select them and use the <code>keytocard</code> command.</p><h3 id=encryption-key>Encryption Key</h3><p>We&rsquo;ll work our way top to bottom in this list by starting with the first key, our encryption key.</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-txt data-lang=txt><span style=display:flex><span>gpg (GnuPG) 2.4.5; Copyright (C) 2024 g10 Code GmbH
+</span></span><span style=display:flex><span>This is free software: you are free to change and redistribute it.
+</span></span><span style=display:flex><span>There is NO WARRANTY, to the extent permitted by law.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Secret subkeys are available.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>pub  ed25519/1EFB4E6493D11756
+</span></span><span style=display:flex><span>     created: 2024-07-29  expires: 2025-07-29  usage: SC
+</span></span><span style=display:flex><span>     trust: ultimate      validity: ultimate
+</span></span><span style=display:flex;background-color:#3d4148><span>ssb  cv25519/6F5A20E5BB387778
+</span></span><span style=display:flex;background-color:#3d4148><span>     created: 2024-07-29  expires: 2025-07-29  usage: E
+</span></span><span style=display:flex><span>ssb  ed25519/3604FD5A162A94E8
+</span></span><span style=display:flex><span>     created: 2024-07-30  expires: 2025-07-30  usage: A
+</span></span><span style=display:flex><span>ssb  ed25519/E4380C50A72281A6
+</span></span><span style=display:flex><span>     created: 2024-07-30  expires: 2025-07-30  usage: S
+</span></span><span style=display:flex><span>[ultimate] (1). Alex Norell (Code Signing and Auth) &lt;alex@norell.co&gt;
+</span></span></code></pre></div><p>We know it is the encryption key because the <code>usage: E</code> line. To select the key, we will type <code>key 1</code></p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-txt data-lang=txt><span style=display:flex><span>gpg&gt; key 1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>pub  ed25519/1EFB4E6493D11756
+</span></span><span style=display:flex><span>     created: 2024-07-29  expires: 2025-07-29  usage: SC
+</span></span><span style=display:flex><span>     trust: ultimate      validity: ultimate
+</span></span><span style=display:flex;background-color:#3d4148><span>ssb* cv25519/6F5A20E5BB387778
+</span></span><span style=display:flex><span>     created: 2024-07-29  expires: 2025-07-29  usage: E
+</span></span><span style=display:flex><span>ssb  ed25519/3604FD5A162A94E8
+</span></span><span style=display:flex><span>     created: 2024-07-30  expires: 2025-07-30  usage: A
+</span></span><span style=display:flex><span>ssb  ed25519/E4380C50A72281A6
+</span></span><span style=display:flex><span>     created: 2024-07-30  expires: 2025-07-30  usage: S
+</span></span><span style=display:flex><span>[ultimate] (1). Alex Norell (Code Signing and Auth) &lt;alex@norell.co&gt;
+</span></span></code></pre></div><p>A <code>*</code> has been added next to the <code>ssb</code> identifier, showing that this key is the currently selected key. Now that we have it selected, we can run <code>keytocard</code></p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>gpg&gt; keytocard
+</span></span><span style=display:flex><span>Please select where to store the key:
+</span></span><span style=display:flex><span>   (2) Encryption key
+</span></span><span style=display:flex><span>Your selection? 2
+</span></span></code></pre></div><p>You will be prompted to put in your passphrase for the key as well as your YubiKey admin pin.</p><p>At this point, the key is on the card, but it is also still available in</p><h3 id=authentication-key>Authentication Key</h3><p>Deselect the first key using <code>key 1</code> and select the second key using <code>key 2</code>. This key is our authentication key, <code>usage: A</code>, so we will put it in that slot</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>gpg&gt; key 1
+</span></span><span style=display:flex><span>gpg&gt; key 2
+</span></span><span style=display:flex><span>gpg&gt; keytocard
+</span></span><span style=display:flex><span>Please select where to store the key:
+</span></span><span style=display:flex><span>   (3) Authentication key
+</span></span><span style=display:flex><span>Your selection? 3
+</span></span></code></pre></div><h3 id=signing-key>Signing Key</h3><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>gpg&gt; key 2
+</span></span><span style=display:flex><span>gpg&gt; key 3
+</span></span><span style=display:flex><span>gpg&gt; keytocard
+</span></span><span style=display:flex><span>Please select where to store the key:
+</span></span><span style=display:flex><span>   (1) Signature key
+</span></span><span style=display:flex><span>   (3) Authentication key
+</span></span><span style=display:flex><span>Your selection? 1
+</span></span></code></pre></div><h3 id=clean-up>Clean up</h3><p>At this point, the keys are on the YubiKey, but they are also still available locally. We need to <code>save</code> the changes in the <code>gpg</code> console to delete the keys locally.</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>gpg&gt; save
+</span></span></code></pre></div><h3 id=review>Review</h3><p>With that all completed, let&rsquo;s take a look at our card now</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>gpg --card-status
+</span></span></code></pre></div><p>Which shows us that all the keys were added to the card</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-txt data-lang=txt><span style=display:flex><span>Reader ...........: Yubico YubiKey FIDO CCID
+</span></span><span style=display:flex><span>Application ID ...: D2760001240100000006286426520000
+</span></span><span style=display:flex><span>Application type .: OpenPGP
+</span></span><span style=display:flex><span>Version ..........: 3.4
+</span></span><span style=display:flex><span>Manufacturer .....: Yubico
+</span></span><span style=display:flex><span>Serial number ....: 28646942
+</span></span><span style=display:flex><span>Name of cardholder: Alex Norell
+</span></span><span style=display:flex><span>Language prefs ...: en
+</span></span><span style=display:flex><span>Salutation .......:
+</span></span><span style=display:flex><span>URL of public key : https://github.com/alexnorell.gpg
+</span></span><span style=display:flex><span>Login data .......: alex
+</span></span><span style=display:flex><span>Signature PIN ....: not forced
+</span></span><span style=display:flex><span>Key attributes ...: ed25519 cv25519 ed25519
+</span></span><span style=display:flex><span>Max. PIN lengths .: 127 127 127
+</span></span><span style=display:flex><span>PIN retry counter : 3 3 3
+</span></span><span style=display:flex><span>Signature counter : 0
+</span></span><span style=display:flex><span>KDF setting ......: off
+</span></span><span style=display:flex><span>UIF setting ......: Sign=off Decrypt=off Auth=off
+</span></span><span style=display:flex;background-color:#3d4148><span>Signature key ....: F52B A161 D0B0 4D4D 6033  F41B E438 0C50 A722 81A6
+</span></span><span style=display:flex;background-color:#3d4148><span>      created ....: 2024-07-30 03:33:49
+</span></span><span style=display:flex;background-color:#3d4148><span>Encryption key....: 4541 CD66 83CE 9B7C C17F  D183 6F5A 20E5 BB38 7778
+</span></span><span style=display:flex;background-color:#3d4148><span>      created ....: 2024-07-29 21:03:23
+</span></span><span style=display:flex;background-color:#3d4148><span>Authentication key: 2483 66FB 9415 1E25 1C74  B2B8 3604 FD5A 162A 94E8
+</span></span><span style=display:flex;background-color:#3d4148><span>      created ....: 2024-07-30 00:27:00
+</span></span><span style=display:flex;background-color:#3d4148><span>General key info..: sub  ed25519/E4380C50A72281A6 2024-07-30 Alex Norell (Code Signing and Auth) &lt;alex@norell.co&gt;
+</span></span><span style=display:flex;background-color:#3d4148><span>sec#  ed25519/1EFB4E6493D11756  created: 2024-07-29  expires: 2025-07-29
+</span></span><span style=display:flex;background-color:#3d4148><span>ssb&gt;  cv25519/6F5A20E5BB387778  created: 2024-07-29  expires: 2025-07-29
+</span></span><span style=display:flex;background-color:#3d4148><span>                                card-no: 0006 28642652
+</span></span><span style=display:flex;background-color:#3d4148><span>ssb&gt;  ed25519/3604FD5A162A94E8  created: 2024-07-30  expires: 2025-07-30
+</span></span><span style=display:flex;background-color:#3d4148><span>                                card-no: 0006 28642652
+</span></span><span style=display:flex;background-color:#3d4148><span>ssb&gt;  ed25519/E4380C50A72281A6  created: 2024-07-30  expires: 2025-07-30
+</span></span><span style=display:flex;background-color:#3d4148><span>                                card-no: 0006 28642652
+</span></span></code></pre></div><p>We can also see some information about our keys in the <code>General key info</code> section.</p><p>The <code>sec</code> key is our primary key and the <code>#</code> next to it indicates only the public key is available. This makes sense since we removed it from our local system in the last guide.</p><p>The <code>ssb</code> keys are our subkeys and the <code>></code> next to them indicate the private keys are available externally, and we can see they are located on <code>card-no: 0006 28642652</code>.</p><p>Everything is in order and we have our keys fully moved over to our YubiKey.</p><h2 id=webauthn>WebAuthn</h2><p>WebAuthn is a way to enhance your account security by adding a strong second factor to your login process. When you set it up with your YubiKey, you register the YubiKey as an additional login method on the service you want to use. The YubiKey creates a special cryptographic key pair, with the private key staying safe on the device and the public key being registered with the service. This adds a &ldquo;has-a&rdquo; factor to your security posture, meaning you need the physical YubiKey in addition to your password, the &ldquo;knows-a&rdquo; factor. This combination significantly boosts your account security, protecting you from phishing and other attacks.</p><h3 id=add-yubikey-to-github>Add YubiKey to GitHub</h3><p>Use the power of your YubiKey to add WebAuthn 2FA to your GitHub account.</p><ol><li>Navigate over to <a href=https://github.com/settings/security>https://github.com/settings/security</a></li><li>In the <strong>Two-factor methods</strong> section, show the <strong>Security keys</strong> section.</li><li>Add a nickname for you security key. I named mine my YubiKey model name.</li><li>Click add</li><li>Touch the metal part of your YubiKey</li><li>Enter in a different 2FA method if prompted</li></ol><p>Now you should be able to use your YubiKey as a second factor of authentication.</p><h3 id=other-services>Other Services</h3><p>Yubico, the makers of YubiKey, have a <a href="https://www.yubico.com/works-with-YubiKey/catalog/?series=1&amp;sort=popular-for-individuals">catalog</a> of services that work with hardware keys. Go through your services and make sure that if it has YubiKey</p><h3 id=backup>Backup</h3><p>Do make sure to store backup codes for your services somewhere. You can print them out and put them in a booklet, add them to your password manager, or set up an entirely separate password manager just for backup codes.</p><p>If you ever lose or damage your hardware key, you will need to either have a backup key available or use one of the provided backup codes to gain access to your account.</p><h2 id=disable-sms-2fa>Disable SMS 2FA</h2><p>SMS 2FA is not secure and should not be used. A phone number can be moved to another phone via your provider using social engineering. It has been linked to dozens of large scale breeches and hacks. Just don&rsquo;t use it. Make sure to go through and remove your phone number from any service as a second factor of authentication.</p><h2 id=troubleshooting>Troubleshooting</h2><p>Make sure you only have one hardware token plugged in at a time. While it is possible to do with multiple cards, this guide assumes only a single key is being configured at a time.</p><h3 id=card-isnt-detected-by-gpg>Card isn&rsquo;t detected by GPG</h3><p>If your card isn&rsquo;t detected by GPG, make sure the OpenPGP application is enabled for your card.</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>ykman info
+</span></span></code></pre></div><p>Which should print something like this:</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-txt data-lang=txt><span style=display:flex><span>Device type: YubiKey 5C NFC
+</span></span><span style=display:flex><span>Serial number: 28646942
+</span></span><span style=display:flex><span>Firmware version: 5.7.1
+</span></span><span style=display:flex><span>Form factor: Keychain (USB-C)
+</span></span><span style=display:flex><span>Enabled USB interfaces: FIDO, CCID
+</span></span><span style=display:flex><span>NFC transport is enabled
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Applications	USB     	NFC
+</span></span><span style=display:flex><span>Yubico OTP  	Disabled	Disabled
+</span></span><span style=display:flex><span>FIDO U2F    	Enabled 	Enabled
+</span></span><span style=display:flex><span>FIDO2       	Enabled 	Enabled
+</span></span><span style=display:flex><span>OATH        	Enabled 	Enabled
+</span></span><span style=display:flex;background-color:#3d4148><span>PIV         	Enabled 	Enabled
+</span></span><span style=display:flex><span>OpenPGP     	Enabled 	Enabled
+</span></span><span style=display:flex><span>YubiHSM Auth	Enabled 	Enabled
+</span></span></code></pre></div><p>If it doesn&rsquo;t say <strong>Enabled</strong>, then you will need to enable it using</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>ykman config usb --enable openpgp
+</span></span></code></pre></div><h3 id=cant-reset-admin-pin>Can&rsquo;t Reset Admin Pin</h3><p>If you can&rsquo;t reset the Admin pin or don&rsquo;t know your Admin pin, you&rsquo;ll need to completely reset the OpenPGP application on the key. Only do this if you can&rsquo;t set the Admin PIN.</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>ykman openpgp reset
+</span></span></code></pre></div><p>Make sure that the pin you are trying to set it to is at least 8 characters long and no longer that 127 characters.</p><h3 id=pin-is-locked>Pin is locked</h3><p>If the wrong pin is entered on your YubiKey 3 times in a row, it will lock the PGP application completely until the Admin PIN is entered and unblocks the PIN. If you lock your YubiKey and you don&rsquo;t remember your Admin PIN, you will need to completely reset the OpenPGP application and you will lose all of your data on you YubiKey. This includes keys stored on the key.</p><p>Launch the GPG card console and edit the card</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>gpg --card-edit
+</span></span><span style=display:flex><span>gpg/card&gt; admin
+</span></span><span style=display:flex><span>gpg/card&gt; passwd
+</span></span></code></pre></div><p>You will then see the password options</p><div class=highlight><pre tabindex=0 style=color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-txt data-lang=txt><span style=display:flex><span>1 - change PIN
+</span></span><span style=display:flex;background-color:#3d4148><span>2 - unblock PIN
+</span></span><span style=display:flex><span>3 - change Admin PIN
+</span></span><span style=display:flex><span>4 - set the Reset Code
+</span></span><span style=display:flex><span>Q - quit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Your selection? 2
+</span></span></code></pre></div><p>Select the <code>unblock PIN</code> option and enter your Admin pin.</p></div></article><footer class=site-footer><div class=container><p>&copy; 2024 Alex Norell. All rights reserved.</p><div class=app-header-social><a href=https://github.com/alexnorell target=_blank rel="noreferrer noopener me"><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github"><title>github</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg>
+</a><a href=https://linkedin.com/in/alexnorell target=_blank rel="noreferrer noopener me"><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin"><title>linkedin</title><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+</a><a href=https://youtube.com/alexnorell target=_blank rel="noreferrer noopener me"><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-youtube"><title>youtube</title><path d="M22.54 6.42a2.78 2.78.0 00-1.94-2C18.88 4 12 4 12 4s-6.88.0-8.6.46a2.78 2.78.0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78.0 003.4 19c1.72.46 8.6.46 8.6.46s6.88.0 8.6-.46a2.78 2.78.0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+</a><a href=/post/index.xml target=_blank rel="noreferrer noopener me"><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-rss"><title>rss</title><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></div></div></footer></main><script src=/js/main.024ac83a6d23950eee454eb8022d03392ee3b46c496cd07fdca04ee027800f12.min.js></script><script>window.goatcounter={path:function(e){return location.host+e}}</script><script data-goatcounter=https://stats.alexnorell.com/aq6ku async src=https://stats.alexnorell.com/aq6ku.js></script></body></html>
