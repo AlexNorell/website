@@ -15,6 +15,7 @@ Boatworks
 Brahmas
 breckenridge
 browserconfig
+cccccbngctgrnlreuinvkktedheigunthctueiheifjr
 CDK
 certbot
 Chetler
@@ -36,6 +37,7 @@ Dynastar
 EDDSA
 Elgamal
 Elgato
+Emoji
 Evo
 extraheader
 Fargate
@@ -43,6 +45,7 @@ flylow
 Focusrite
 fqdns
 GINX
+github
 gladed
 gmax
 Gmb
@@ -58,6 +61,8 @@ greeley
 hestra
 Hifiman
 hoback
+HOTP
+https
 Huevos
 hugomod
 hyvent
@@ -66,7 +71,9 @@ iotvillage
 JBL
 Jira
 kbx
+KDF
 keygrip
+keytocard
 Kimpton
 kinda
 Lenawee
@@ -82,6 +89,7 @@ Munki
 Namecheap
 nas
 netlify
+nfc
 Nintendo
 norell
 Norquay
@@ -89,14 +97,19 @@ northface
 omment
 openpgp
 Oplessly
+otp
+OTPs
 outerlayer
 Pallavicini
 panterra
+passwordless
 peaceiris
 Pendect
 phd
+phishing
 pinentry
 podcasts
+prefs
 pubring
 Radeon
 Raleno
@@ -104,6 +117,7 @@ reloadagent
 revelstoke
 revocs
 roadtrip
+rofl
 roswell
 rsyncer
 Sacajawea
@@ -118,6 +132,7 @@ sni
 snowbasin
 snowberms
 snowboard
+ssh
 sshcontrol
 subwoofer
 Sundara
@@ -128,8 +143,12 @@ terabytes
 terraform
 tfstates
 Thermagraph
+TOTP
 Trackpad
 TVillage
+ubuntu
+UIF
+usb
 utterences
 Viewline
 Vistana
@@ -138,10 +157,17 @@ VRBO
 websites
 weslack
 Westin
+workarounds
 Worldmark
 xlarge
 XLR
+ykman
+YOTP
 youtube
+Yubi
+Yubico
+Yubikey
+YubiKey
 Zigbee
 zipfit
 Zooz
