@@ -165,7 +165,6 @@ YOTP
 youtube
 Yubi
 Yubico
-Yubikey
 YubiKey
 yubikey
 Zigbee
