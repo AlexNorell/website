@@ -98,7 +98,6 @@ omment
 openpgp
 Oplessly
 otp
-OTPs
 outerlayer
 Pallavicini
 panterra
