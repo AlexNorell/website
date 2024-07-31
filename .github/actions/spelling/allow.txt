@@ -23,4 +23,4 @@ YOTP
 Yubi
 Yubico
 YubiKey
-YubiKey
+yubikey
