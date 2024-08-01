@@ -54,3 +54,15 @@
 # in a version of check-spelling after @0.0.21 printf markers won't be automatically consumed
 # printf markers
 (?<!\\)\\[nrt](?=[a-z]{2,})
+
+# Automatically suggested patterns
+# hit-count: 6 file-count: 2
+# version suffix <word>v#
+(?:(?<=[A-Z]{2})V|(?<=[a-z]{2}|[A-Z]{2})v)\d+(?:\b|(?=[a-zA-Z_]))
+
+# hit-count: 1 file-count: 1
+# mailto urls
+mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
+
+# GPG Public Keys
+-----BEGIN PGP PUBLIC KEY BLOCK-----\s*([A-Za-z0-9+/=]+\s*)+-----END PGP PUBLIC KEY BLOCK-----
