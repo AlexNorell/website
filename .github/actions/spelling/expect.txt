@@ -35,6 +35,7 @@ Dreamcatcher
 dvo
 Dynastar
 EDDSA
+Elasti
 Elgamal
 Elgato
 Emoji
@@ -46,6 +47,7 @@ Focusrite
 fqdns
 GINX
 github
+GKE
 gladed
 gmax
 Gmb
@@ -61,11 +63,13 @@ greeley
 hestra
 Hifiman
 hoback
+homelab
 HOTP
 https
 Huevos
 hugomod
 hyvent
+IAR
 Intraknit
 iotvillage
 JBL
@@ -82,6 +86,7 @@ Logitech
 Lousie
 lowendbox
 mariah
+Memorystore
 mic
 Micca
 midgate
@@ -94,6 +99,7 @@ Nintendo
 norell
 Norquay
 northface
+Odos
 omment
 openpgp
 Oplessly
@@ -112,6 +118,8 @@ prefs
 pubring
 Radeon
 Raleno
+rearchitecting
+Redis
 reloadagent
 revelstoke
 revocs
@@ -131,6 +139,7 @@ sni
 snowbasin
 snowberms
 snowboard
+Spacelift
 ssh
 sshcontrol
 subwoofer
@@ -160,13 +169,14 @@ workarounds
 Worldmark
 xlarge
 XLR
+Xpresso
 ykman
 YOTP
 youtube
 Yubi
 Yubico
-YubiKey
 yubikey
+YubiKey
 Zigbee
 zipfit
 Zooz
