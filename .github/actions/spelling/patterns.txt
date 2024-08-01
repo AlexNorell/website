@@ -64,5 +64,31 @@
 # mailto urls
 mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
 
-# GPG key
-/-----BEGIN PGP PUBLIC KEY BLOCK-----[\\s\\S]*?-----END PGP PUBLIC KEY BLOCK-----/
+# pgp
+\bgnupg\.net/pks/lookup[?&=0-9a-zA-Z]*
+
+# ANSI color codes
+\\(?:u00|x)1b\[\d+(?:;\d+|)m
+
+# URL escaped characters
+\%[0-9A-F]{2}
+# IPv6
+\b(?:[0-9a-f]{0,4}:){3,7}[0-9a-f]{0,4}\b
+# c99 hex digits (not the full format, just one I've seen)
+0x[0-9a-fA-F](?:\.[0-9a-fA-F]*|)[pP]
+# Punycode
+\bxn--[-0-9a-z]+
+# sha256
+sha256:[0-9a-f]+
+# sha-... -- uses a fancy capture
+(['"]|&quot;)[0-9a-f]{40,}\g{-1}
+# hex in url queries
+=[0-9a-fA-F]+&
+# ssh
+(?:ssh-\S+|-nistp256) [-a-zA-Z=;:/0-9+]*
+# PGP
+\b(?:[0-9A-F]{4} ){9}[0-9A-F]{4}\b
+# uuid:
+[<({"'>][0-9a-fA-F]{8}-(?:[0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[<'"})>]
+# hex digits including css/html color classes:
+(?:[\\0][xX]|\\u|[uU]\+|#x?|\%23)[0-9a-fA-FgGrR_]{2,}(?:[uUlL]{0,3}|u\d+)\b
