@@ -61,7 +61,7 @@ T2yRYoa5Gw9JkIJvye1g/7fV0/xJFn+nBNM7ZlKETw==
 
 ## Code
 
-I sign my git commits. I have used many different keys over the years and the most comprehesive list is located on GitHub.
+I sign my git commits. I have used many different keys over the years and the most comprehensive list is located on GitHub.
 
 My latest key is available below.
 
