@@ -63,6 +63,7 @@ greeley
 hestra
 Hifiman
 hoback
+homelab
 HOTP
 https
 Huevos
