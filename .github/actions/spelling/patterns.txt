@@ -63,3 +63,6 @@
 # hit-count: 1 file-count: 1
 # mailto urls
 mailto:[-a-zA-Z=;:/?%&0-9+@.]{3,}
+
+# GPG key
+/-----BEGIN PGP PUBLIC KEY BLOCK-----[\\s\\S]*?-----END PGP PUBLIC KEY BLOCK-----/
